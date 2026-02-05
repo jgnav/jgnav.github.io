@@ -15,6 +15,13 @@
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
 
+<script>
+  const authorURLs = {
+    mateoCamara: "https://mateocamara.com/",
+    joseLuisBlanco: "https://portalcientifico.upm.es/es/ipublic/researcher/309256"
+  };
+</script>
+
 
 
 
@@ -39,7 +46,7 @@
                     Email: <a href="mailto:juan.gutierrez@upm.es">juan.gutierrez [at] upm [dot] es</a>
                   <p>
                     I am a Ph.D student in Computer Vision at <a href="https://www.upm.es/">UPM</a>, supervised by <a
-                      href="https://portalcientifico.upm.es/es/ipublic/researcher/309256">Dr. José Luis Blanco
+                      class="author-joseluis">Dr. José Luis Blanco
                       Murillo</a>, and, since September 2022, member of <a href="https://www.gaps.ssr.upm.es/">GAPS</a> research group.
                   </p>
                   <p style="text-align:center">
@@ -93,9 +100,9 @@
                   <td style="padding:16px;width:20%;vertical-align:middle">
                     <div class="one">
                       <div class="two" id='speech_image'>
-                        <img src='images/euronoise_after.jpg' width=100% alt="Speech visualization">
+                        <img src='images/euronoise_after.png' width=100% alt="Speech visualization">
                       </div>
-                      <img src='images/euronoise_before.jpg' width=100% alt="Speech placeholder">
+                      <img src='images/euronoise_before.png' width=100% alt="Speech placeholder">
                     </div>
                     <script type="text/javascript">
                       function speech_start() {
@@ -113,10 +120,10 @@
                         Synthesis</span>
                     </a>
                     <br>
-                    Mateo Cámara,
+                    <a class="author-mateo">Mateo Cámara</a>,
                     <strong>Juan Gutiérrez</strong>,
                     María Pilar Daza,
-                    José Luis Blanco
+                    <a class="author-joseluis">José Luis Blanco</a>
                     <br>
                     <em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain
                     <br>
@@ -157,7 +164,7 @@
                   <strong>Juan Gutiérrez</strong>,
                   Ángel Mora Sánchez,
                   Silvia Rodríguez Jiménez,
-                  José Luis Blanco
+                  <a class="author-joseluis">José Luis Blanco</a>
                   <br>
                   <em>Distributed Computing and Artificial Intelligence (DCAI)</em>, 2024 (Springer LNCS, 2025)
                   <br>
@@ -307,6 +314,10 @@
         </td>
       </tr>
   </table>
+<script>
+  document.querySelectorAll('.author-mateo').forEach(el => el.href = authorURLs.mateoCamara);
+  document.querySelectorAll('.author-joseluis').forEach(el => el.href = authorURLs.joseLuisBlanco);
+</script>
 </body>
 
 </html>
