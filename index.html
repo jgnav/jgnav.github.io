@@ -11,6 +11,33 @@
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
 
+
+
+<script>
+function loadBibtex() {
+  const bib = document.getElementById("bibtex_thesis");
+
+  if (bib.style.display === "block") {
+    bib.style.display = "none";
+    return;
+  }
+
+  fetch("data/masterthesis.bib")
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById("bibtex_content").textContent = text;
+      bib.style.display = "block";
+    })
+    .catch(err => {
+      document.getElementById("bibtex_content").textContent =
+        "Error loading BibTeX.";
+      bib.style.display = "block";
+    });
+}
+</script>
+
+
+
 <body>
   <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
@@ -43,7 +70,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/juangutierrez.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/juangutierrez_circle.png" class="hoverZoomLink"></a>
+              <a href="images/juangutierrez.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/juangutierrez_circle.png" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -58,8 +85,6 @@
               </td>
             </tr>
           </tbody></table>
-
-
 
 
 
@@ -186,39 +211,46 @@
     </tr>
 
     <tr onmouseout="thesis_stop()" onmouseover="thesis_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='thesis_image'>
-            <img src='images/thesis_after.jpg' width=100% alt="Thesis visualization">
-          </div>
-          <img src='images/thesis_before.jpg' width=100% alt="Thesis placeholder">
+    <td style="padding:16px;width:20%;vertical-align:middle">
+      <div class="one">
+        <div class="two" id='thesis_image'>
+          <img src='images/thesis_after.png' width=100%>
         </div>
-        <script type="text/javascript">
-          function thesis_start() {
-            document.getElementById('thesis_image').style.opacity = "1";
-          }
-          function thesis_stop() {
-            document.getElementById('thesis_image').style.opacity = "0";
-          }
-          thesis_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="#">
-          <span class="papertitle">Study for the Development of a Video Annotation Support System Using an Agnostic Image Model</span>
-        </a>
-        <br>
-        <strong>Juan Gutiérrez</strong>
-        <br>
-        <em>Master's Thesis</em>, UPM, 2023
-        <br>
-        <a href="#">thesis</a>
-        <p></p>
-        <p>
-        Supervised by José Luis Blanco. Investigated agnostic image models to support efficient video annotation systems.
-        </p>
-      </td>
-    </tr>
+        <img src='images/thesis_before.png' width=100%>
+      </div>
+      <script type="text/javascript">
+        function thesis_start() {
+          document.getElementById('thesis_image').style.opacity = "1";
+        }
+        function thesis_stop() {
+          document.getElementById('thesis_image').style.opacity = "0";
+        }
+        thesis_stop()
+      </script>
+    </td>
+
+    <td style="padding:8px;width:80%;vertical-align:middle">
+      <a href="https://oa.upm.es/75341/">
+        <span class="papertitle">Study for the Development of a Video Annotation Support System Using an Agnostic Image Model</span>
+      </a>
+      <br>
+      <strong>Juan Gutiérrez</strong>
+      <br>
+      <em>Master's Thesis</em>, UPM, 2023
+      <br>
+      <a href="https://oa.upm.es/75341/">thesis</a> |
+      <a href="#" onclick="loadBibtex(); return false;">bibtex</a>
+
+      <div id="bibtex_thesis" style="display:none; margin-top:8px;">
+      <pre id="bibtex_content"></pre>
+      </div>
+
+      <p></p>
+      <p>
+        Developed a CLIP-based human-in-the-loop system for efficient video annotation via keyframe selection, semantic retrieval, and automatic label propagation.
+      </p>
+    </td>
+  </tr>
 
 </tbody></table>
 
