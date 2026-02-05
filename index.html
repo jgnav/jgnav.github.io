@@ -17,28 +17,7 @@
 
 
 
-<script>
-  function loadBibtex() {
-    const bib = document.getElementById("bibtex_thesis");
 
-    if (bib.style.display === "block") {
-      bib.style.display = "none";
-      return;
-    }
-
-    fetch("data/masterthesis.bib")
-      .then(response => response.text())
-      .then(text => {
-        document.getElementById("bibtex_content").textContent = text;
-        bib.style.display = "block";
-      })
-      .catch(err => {
-        document.getElementById("bibtex_content").textContent =
-          "Error loading BibTeX.";
-        bib.style.display = "block";
-      });
-  }
-</script>
 
 
 
@@ -105,60 +84,59 @@
             </tbody>
           </table>
 
-
-          <tr onmouseout="speech_stop()" onmouseover="speech_start()">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='speech_image'>
-                      <img src='images/speech_after.jpg' width=100% alt="Speech visualization">
-                    </div>
-                    <img src='images/speech_before.jpg' width=100% alt="Speech placeholder">
-                  </div>
-                  <script type="text/javascript">
-                    function speech_start() {
-                      document.getElementById('speech_image').style.opacity = "1";
-                    }
-                    function speech_stop() {
-                      document.getElementById('speech_image').style.opacity = "0";
-                    }
-                    speech_stop()
-                  </script>
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="#">
-                    <span class="papertitle">Open-Source System for Multilingual Translation and Cloned Speech
-                      Synthesis</span>
-                  </a>
-                  <br>
-                  Mateo Cámara,
-                  <strong>Juan Gutiérrez</strong>,
-                  María Pilar Daza,
-                  José Luis Blanco
-                  <br>
-                  <em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain
-                  <br>
-                  <a href="#">paper</a>
-                  <p></p>
-                  <p>
-                    Presented at Euronoise 2025, detailing a system for multilingual translation and cloned speech
-                    synthesis.
-                  </p>
-                </td>
-              </tr>
-
-
-
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+
+
+            <tr onmouseout="speech_stop()" onmouseover="speech_start()">
+                  <td style="padding:16px;width:20%;vertical-align:middle">
+                    <div class="one">
+                      <div class="two" id='speech_image'>
+                        <img src='images/euronoise_after.jpg' width=100% alt="Speech visualization">
+                      </div>
+                      <img src='images/euronoise_before.jpg' width=100% alt="Speech placeholder">
+                    </div>
+                    <script type="text/javascript">
+                      function speech_start() {
+                        document.getElementById('speech_image').style.opacity = "1";
+                      }
+                      function speech_stop() {
+                        document.getElementById('speech_image').style.opacity = "0";
+                      }
+                      speech_stop()
+                    </script>
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle">
+                    <a href="https://arxiv.org/abs/2507.02530">
+                      <span class="papertitle">Open-Source System for Multilingual Translation and Cloned Speech
+                        Synthesis</span>
+                    </a>
+                    <br>
+                    Mateo Cámara,
+                    <strong>Juan Gutiérrez</strong>,
+                    María Pilar Daza,
+                    José Luis Blanco
+                    <br>
+                    <em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain
+                    <br>
+                    <a href="https://arxiv.org/abs/2507.02530">paper</a> |
+                    <a href="data/euronoise.bib" download>bibtex</a>
+                    <p></p>
+                    <p>
+                      An open-source pipeline combining speech recognition, LLM-based translation, and voice-cloning TTS for real-time multilingual communication.
+                    </p>
+                  </td>
+                </tr>
+
 
               <tr onmouseout="dcai_stop()" onmouseover="dcai_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='dcai_image'>
-                      <img src='images/dcai_after.jpg' width=100% alt="DCAI visualization">
+                      <img src='images/dcai_after.png' width=100% alt="DCAI visualization">
                     </div>
-                    <img src='images/dcai_before.jpg' width=100% alt="DCAI placeholder">
+                    <img src='images/dcai_before.png' width=100% alt="DCAI placeholder">
                   </div>
                   <script type="text/javascript">
                     function dcai_start() {
@@ -171,7 +149,7 @@
                   </script>
                 </td>
                 <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="#">
+                  <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1">
                     <span class="papertitle">AI-Boosted Video Annotation: Exploring Pre-Labeling with
                       Cross-Modalities</span>
                   </a>
@@ -183,11 +161,11 @@
                   <br>
                   <em>Distributed Computing and Artificial Intelligence (DCAI)</em>, 2024 (Springer LNCS, 2025)
                   <br>
-                  <a href="#">paper</a>
+                  <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1">paper</a> |
+                  <a href="data/dcai.bib" download>bibtex</a>
                   <p></p>
                   <p>
-                    Developed efficient cross-modal attention mechanisms for aligning voice, text, and image modalities
-                    to reduce compute overhead during pre-training.
+                    Leveraging pre-trained cross-modal models within the Human-in-the-Loop paradigm to efficiently pre-annotate large-scale video datasets.
                   </p>
                 </td>
               </tr>
@@ -224,11 +202,7 @@
                   <em>Master's Thesis</em>, UPM, 2023
                   <br>
                   <a href="https://oa.upm.es/75341/">thesis</a> |
-                  <a href="#" onclick="loadBibtex(); return false;">bibtex</a>
-
-                  <div id="bibtex_thesis" style="display:none; margin-top:8px;">
-                    <pre id="bibtex_content"></pre>
-                  </div>
+                  <a href="data/masterthesis.bib" download>bibtex</a>
 
                   <p></p>
                   <p>
