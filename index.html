@@ -101,14 +101,16 @@
                     <div class="two" id='hitl_image'>
                       <img src='images/hitl_after.png' width=100% alt="HITL visualization">
                     </div>
-                    <img src='images/hitl_before.png' width=100% alt="HITL placeholder">
+                    <img id='hitl_before' src='images/hitl_before.png' width=100% alt="HITL placeholder">
                   </div>
                   <script type="text/javascript">
                     function hitl_start() {
                       document.getElementById('hitl_image').style.opacity = "1";
+                      document.getElementById('hitl_before').style.opacity = "0";
                     }
                     function hitl_stop() {
                       document.getElementById('hitl_image').style.opacity = "0";
+                      document.getElementById('hitl_before').style.opacity = "1";
                     }
                     hitl_stop()
                   </script>
@@ -142,14 +144,16 @@
                     <div class="two" id='panc_image'>
                       <img src='images/panc_after.png' width=100% alt="PANC visualization">
                     </div>
-                    <img src='images/panc_before.png' width=100% alt="PANC placeholder">
+                    <img id='panc_before' src='images/panc_before.png' width=100% alt="PANC placeholder">
                   </div>
                   <script type="text/javascript">
                     function panc_start() {
                       document.getElementById('panc_image').style.opacity = "1";
+                      document.getElementById('panc_before').style.opacity = "0";
                     }
                     function panc_stop() {
                       document.getElementById('panc_image').style.opacity = "0";
+                      document.getElementById('panc_before').style.opacity = "1";
                     }
                     panc_stop()
                   </script>
@@ -181,14 +185,16 @@
                       <div class="two" id='speech_image'>
                         <img src='images/euronoise_after.png' width=100% alt="Speech visualization">
                       </div>
-                      <img src='images/euronoise_before.png' width=100% alt="Speech placeholder">
+                      <img id='speech_before' src='images/euronoise_before.png' width=100% alt="Speech placeholder">
                     </div>
                     <script type="text/javascript">
                       function speech_start() {
                         document.getElementById('speech_image').style.opacity = "1";
+                        document.getElementById('speech_before').style.opacity = "0";
                       }
                       function speech_stop() {
                         document.getElementById('speech_image').style.opacity = "0";
+                        document.getElementById('speech_before').style.opacity = "1";
                       }
                       speech_stop()
                     </script>
@@ -222,14 +228,16 @@
                     <div class="two" id='dcai_image'>
                       <img src='images/dcai_after.png' width=100% alt="DCAI visualization">
                     </div>
-                    <img src='images/dcai_before.png' width=100% alt="DCAI placeholder">
+                    <img id='dcai_before' src='images/dcai_before.png' width=100% alt="DCAI placeholder">
                   </div>
                   <script type="text/javascript">
                     function dcai_start() {
                       document.getElementById('dcai_image').style.opacity = "1";
+                      document.getElementById('dcai_before').style.opacity = "0";
                     }
                     function dcai_stop() {
                       document.getElementById('dcai_image').style.opacity = "0";
+                      document.getElementById('dcai_before').style.opacity = "1";
                     }
                     dcai_stop()
                   </script>
@@ -264,14 +272,16 @@
                     <div class="two" id='thesis_image'>
                       <img src='images/thesis_after.png' width=100%>
                     </div>
-                    <img src='images/thesis_before.png' width=100%>
+                    <img id='thesis_before' src='images/thesis_before.png' width=100%>
                   </div>
                   <script type="text/javascript">
                     function thesis_start() {
                       document.getElementById('thesis_image').style.opacity = "1";
+                      document.getElementById('thesis_before').style.opacity = "0";
                     }
                     function thesis_stop() {
                       document.getElementById('thesis_image').style.opacity = "0";
+                      document.getElementById('thesis_before').style.opacity = "1";
                     }
                     thesis_stop()
                   </script>
