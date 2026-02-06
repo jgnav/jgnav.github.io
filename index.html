@@ -95,7 +95,46 @@
             <tbody>
 
 
-              <tr onmouseout="hitl_stop()" onmouseover="hitl_start()" bgcolor="#ffffd0">
+              <tr onmouseout="panc_stop()" onmouseover="panc_start()" bgcolor="#ffffd0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='panc_image' style="background-color:#ffffd0;">
+                      <img src='images/panc_after.png' width=100% alt="PANC visualization">
+                    </div>
+                    <img src='images/panc_before.png' width=100% alt="PANC placeholder">
+                  </div>
+                  <script type="text/javascript">
+                    function panc_start() {
+                      document.getElementById('panc_image').style.opacity = "1";
+                    }
+                    function panc_stop() {
+                      document.getElementById('panc_image').style.opacity = "0";
+                    }
+                    panc_stop()
+                  </script>
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="data/panc.pdf">
+                    <span class="papertitle">PANC: Prior-Aware Normalized Cut for Object Segmentation</span>
+                  </a>
+                  <br>
+                  <strong>Juan Gutiérrez</strong>,
+                  <a class="author-victor">Víctor Gutiérrez</a>,
+                  <a class="author-joseluis">José Luis Blanco</a>
+                  <br>
+                  <em>Preprint</em>, 2026
+                  <br>
+                  <a href="data/panc.pdf">pdf</a> 
+                  <!-- | <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/panc.bib')">bibtex</a> -->
+                  <p></p>
+                  <p>
+                    A weakly-supervised spectral segmentation framework using minimal annotated visual tokens to produce stable, controllable object masks.
+                  </p>
+                </td>
+              </tr>
+
+
+                <tr onmouseout="hitl_stop()" onmouseover="hitl_start()" bgcolor="#ffffd0">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='hitl_image' style="background-color:#ffffd0;">
@@ -131,45 +170,6 @@
                   <p></p>
                   <p>
                     Benchmarking assisted annotation workflows using fine-tuned vision-language model for video.
-                  </p>
-                </td>
-              </tr>
-
-
-              <tr onmouseout="panc_stop()" onmouseover="panc_start()" bgcolor="#ffffd0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='panc_image' style="background-color:#ffffd0;">
-                      <img src='images/panc_after.png' width=100% alt="PANC visualization">
-                    </div>
-                    <img src='images/panc_before.png' width=100% alt="PANC placeholder">
-                  </div>
-                  <script type="text/javascript">
-                    function panc_start() {
-                      document.getElementById('panc_image').style.opacity = "1";
-                    }
-                    function panc_stop() {
-                      document.getElementById('panc_image').style.opacity = "0";
-                    }
-                    panc_stop()
-                  </script>
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="data/panc.pdf">
-                    <span class="papertitle">PANC: Prior-Aware Normalized Cut for Object Segmentation</span>
-                  </a>
-                  <br>
-                  <strong>Juan Gutiérrez</strong>,
-                  <a class="author-victor">Víctor Gutiérrez</a>,
-                  <a class="author-joseluis">José Luis Blanco</a>
-                  <br>
-                  <em>Preprint</em>, 2026
-                  <br>
-                  <a href="data/panc.pdf">pdf</a> 
-                  <!-- | <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/panc.bib')">bibtex</a> -->
-                  <p></p>
-                  <p>
-                    A weakly-supervised spectral segmentation framework using minimal annotated visual tokens to produce stable, controllable object masks.
                   </p>
                 </td>
               </tr>
