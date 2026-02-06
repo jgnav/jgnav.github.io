@@ -104,9 +104,20 @@
                     <img id='hitl_before' src='images/hitl_before.png' width=100% alt="HITL placeholder">
                   </div>
                   <script type="text/javascript">
+                    var hitl_loaded = false;
                     function hitl_start() {
-                      document.getElementById('hitl_after').style.opacity = "1";
-                      document.getElementById('hitl_before').style.opacity = "0";
+                      var img = document.querySelector('#hitl_after img');
+                      if (hitl_loaded || img.complete) {
+                        hitl_loaded = true;
+                        document.getElementById('hitl_after').style.opacity = "1";
+                        document.getElementById('hitl_before').style.opacity = "0";
+                      } else {
+                        img.onload = function() {
+                          hitl_loaded = true;
+                          document.getElementById('hitl_after').style.opacity = "1";
+                          document.getElementById('hitl_before').style.opacity = "0";
+                        };
+                      }
                     }
                     function hitl_stop() {
                       document.getElementById('hitl_after').style.opacity = "0";
@@ -132,7 +143,7 @@
                   <!-- | <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/hitl.bib')">bibtex</a> -->
                   <p></p>
                   <p>
-                    Benchmarking assisted annotation workflows using fine-tuned vision-language models for video.
+                    Benchmarking assisted annotation workflows using fine-tuned vision-language model for video.
                   </p>
                 </td>
               </tr>
@@ -147,9 +158,20 @@
                     <img id='panc_before' src='images/panc_before.png' width=100% alt="PANC placeholder">
                   </div>
                   <script type="text/javascript">
+                    var panc_loaded = false;
                     function panc_start() {
-                      document.getElementById('panc_after').style.opacity = "1";
-                      document.getElementById('panc_before').style.opacity = "0";
+                      var img = document.querySelector('#panc_after img');
+                      if (panc_loaded || img.complete) {
+                        panc_loaded = true;
+                        document.getElementById('panc_after').style.opacity = "1";
+                        document.getElementById('panc_before').style.opacity = "0";
+                      } else {
+                        img.onload = function() {
+                          panc_loaded = true;
+                          document.getElementById('panc_after').style.opacity = "1";
+                          document.getElementById('panc_before').style.opacity = "0";
+                        };
+                      }
                     }
                     function panc_stop() {
                       document.getElementById('panc_after').style.opacity = "0";
@@ -188,9 +210,20 @@
                       <img id='speech_before' src='images/euronoise_before.png' width=100% alt="Speech placeholder">
                     </div>
                     <script type="text/javascript">
+                      var speech_loaded = false;
                       function speech_start() {
-                        document.getElementById('speech_after').style.opacity = "1";
-                        document.getElementById('speech_before').style.opacity = "0";
+                        var img = document.querySelector('#speech_after img');
+                        if (speech_loaded || img.complete) {
+                          speech_loaded = true;
+                          document.getElementById('speech_after').style.opacity = "1";
+                          document.getElementById('speech_before').style.opacity = "0";
+                        } else {
+                          img.onload = function() {
+                            speech_loaded = true;
+                            document.getElementById('speech_after').style.opacity = "1";
+                            document.getElementById('speech_before').style.opacity = "0";
+                          };
+                        }
                       }
                       function speech_stop() {
                         document.getElementById('speech_after').style.opacity = "0";
@@ -231,9 +264,20 @@
                     <img id='dcai_before' src='images/dcai_before.png' width=100% alt="DCAI placeholder">
                   </div>
                   <script type="text/javascript">
+                    var dcai_loaded = false;
                     function dcai_start() {
-                      document.getElementById('dcai_after').style.opacity = "1";
-                      document.getElementById('dcai_before').style.opacity = "0";
+                      var img = document.querySelector('#dcai_after img');
+                      if (dcai_loaded || img.complete) {
+                        dcai_loaded = true;
+                        document.getElementById('dcai_after').style.opacity = "1";
+                        document.getElementById('dcai_before').style.opacity = "0";
+                      } else {
+                        img.onload = function() {
+                          dcai_loaded = true;
+                          document.getElementById('dcai_after').style.opacity = "1";
+                          document.getElementById('dcai_before').style.opacity = "0";
+                        };
+                      }
                     }
                     function dcai_stop() {
                       document.getElementById('dcai_after').style.opacity = "0";
@@ -275,9 +319,20 @@
                     <img id='thesis_before' src='images/thesis_before.png' width=100%>
                   </div>
                   <script type="text/javascript">
+                    var thesis_loaded = false;
                     function thesis_start() {
-                      document.getElementById('thesis_after').style.opacity = "1";
-                      document.getElementById('thesis_before').style.opacity = "0";
+                      var img = document.querySelector('#thesis_after img');
+                      if (thesis_loaded || img.complete) {
+                        thesis_loaded = true;
+                        document.getElementById('thesis_after').style.opacity = "1";
+                        document.getElementById('thesis_before').style.opacity = "0";
+                      } else {
+                        img.onload = function() {
+                          thesis_loaded = true;
+                          document.getElementById('thesis_after').style.opacity = "1";
+                          document.getElementById('thesis_before').style.opacity = "0";
+                        };
+                      }
                     }
                     function thesis_stop() {
                       document.getElementById('thesis_after').style.opacity = "0";
