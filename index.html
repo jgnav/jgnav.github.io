@@ -128,7 +128,7 @@
                     <em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain
                     <br>
                     <a href="https://arxiv.org/abs/2507.02530">arXiv</a> |
-                    <a href="data/euronoise.bib" download>bibtex</a>
+                    <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/euronoise.bib')">bibtex</a>
                     <p></p>
                     <p>
                       An open-source pipeline combining speech recognition, LLM-based translation, and voice-cloning TTS for real-time multilingual communication.
@@ -169,7 +169,7 @@
                   <em>Distributed Computing and Artificial Intelligence (DCAI)</em>, 2024 (Springer LNCS, 2025)
                   <br>
                   <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1">paper</a> |
-                  <a href="data/dcai.bib" download>bibtex</a>
+                  <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/dcai.bib')">bibtex</a>
                   <p></p>
                   <p>
                     Leveraging pre-trained cross-modal models within the Human-in-the-Loop paradigm to efficiently pre-annotate large-scale video datasets.
@@ -209,7 +209,7 @@
                   <em>Master's Thesis</em>, UPM, 2023
                   <br>
                   <a href="https://oa.upm.es/75341/">thesis</a> |
-                  <a href="data/masterthesis.bib" download>bibtex</a>
+                  <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/masterthesis.bib')">bibtex</a>
 
                   <p></p>
                   <p>
@@ -314,9 +314,72 @@
         </td>
       </tr>
   </table>
+<!-- BibTeX Modal -->
+<div id="bibtex-overlay" class="bibtex-overlay">
+  <div class="bibtex-modal">
+    <div class="bibtex-modal-header">
+      <h3>BibTeX Citation</h3>
+      <button class="bibtex-close" onclick="closeBibtexModal()">&times;</button>
+    </div>
+    <pre id="bibtex-content" class="bibtex-content"></pre>
+    <button class="bibtex-copy-btn" onclick="copyBibtex()">Copy to Clipboard</button>
+  </div>
+</div>
+
 <script>
   document.querySelectorAll('.author-mateo').forEach(el => el.href = authorURLs.mateoCamara);
   document.querySelectorAll('.author-joseluis').forEach(el => el.href = authorURLs.joseLuisBlanco);
+
+  // BibTeX Modal Functions
+  function showBibtexModal(bibPath) {
+    fetch(bibPath)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('bibtex-content').textContent = data.trim();
+        document.getElementById('bibtex-overlay').classList.add('active');
+      })
+      .catch(error => {
+        console.error('Error loading BibTeX:', error);
+        alert('Error loading BibTeX file');
+      });
+  }
+
+  function closeBibtexModal() {
+    document.getElementById('bibtex-overlay').classList.remove('active');
+    const copyBtn = document.querySelector('.bibtex-copy-btn');
+    copyBtn.textContent = 'Copy to Clipboard';
+    copyBtn.classList.remove('copied');
+  }
+
+  function copyBibtex() {
+    const bibtexText = document.getElementById('bibtex-content').textContent;
+    navigator.clipboard.writeText(bibtexText).then(() => {
+      const copyBtn = document.querySelector('.bibtex-copy-btn');
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy to Clipboard';
+        copyBtn.classList.remove('copied');
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy:', err);
+      alert('Failed to copy to clipboard');
+    });
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('bibtex-overlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeBibtexModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeBibtexModal();
+    }
+  });
 </script>
 </body>
 

@@ -129,3 +129,98 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+/* BibTeX Modal Styles */
+.bibtex-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bibtex-overlay.active {
+  display: flex;
+}
+
+.bibtex-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bibtex-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.bibtex-modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.bibtex-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  line-height: 1;
+}
+
+.bibtex-close:hover {
+  color: #333;
+}
+
+.bibtex-content {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.bibtex-copy-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #1772d0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.bibtex-copy-btn:hover {
+  background-color: #f09228;
+}
+
+.bibtex-copy-btn.copied {
+  background-color: #28a745;
+}
+
+.bibtex-link {
+  cursor: pointer;
+}
