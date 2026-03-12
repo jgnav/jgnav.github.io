@@ -1,6 +1,7 @@
           <style>
             .news-date {
-              background: #f0f0f0;
+              background: var(--news-badge-bg);
+              color: var(--news-badge-text);
               border-radius: 12px;
               padding: 2px 10px;
               margin-right: 8px;
@@ -39,6 +40,12 @@
 
 
 <body>
+  <div class="theme-toggle">
+    <button id="theme-toggle" class="theme-toggle-button" type="button" aria-label="Enable dark mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+      <span id="theme-toggle-label" class="theme-toggle-label">Dark mode</span>
+    </button>
+  </div>
   <table
     style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
@@ -112,10 +119,10 @@
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-              <tr onmouseout="panc_stop()" onmouseover="panc_start()" bgcolor="#ffffd0">
+              <tr onmouseout="panc_stop()" onmouseover="panc_start()" class="publication-card publication-highlight">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
-                    <div class="two" id='panc_image' style="background-color:#ffffd0;">
+                    <div class="two" id='panc_image'>
                       <img src='images/panc_after.png' width=100% alt="PANC visualization">
                     </div>
                     <img src='images/panc_before.png' width=100% alt="PANC placeholder">
@@ -150,10 +157,10 @@
                 </td>
               </tr>
 
-                <tr onmouseout="hitl_stop()" onmouseover="hitl_start()" bgcolor="#ffffd0">
+                <tr onmouseout="hitl_stop()" onmouseover="hitl_start()" class="publication-card publication-highlight">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
-                    <div class="two" id='hitl_image' style="background-color:#ffffd0;">
+                    <div class="two" id='hitl_image'>
                       <img src='images/hitl_after.png' width=100% alt="HITL visualization">
                     </div>
                     <img src='images/hitl_before.png' width=100% alt="HITL placeholder">
@@ -191,7 +198,7 @@
               </tr>
 
         
-            <tr onmouseout="speech_stop()" onmouseover="speech_start()">
+            <tr onmouseout="speech_stop()" onmouseover="speech_start()" class="publication-card">
                   <td style="padding:16px;width:20%;vertical-align:middle">
                     <div class="one">
                       <div class="two" id='speech_image'>
@@ -232,7 +239,7 @@
                 </tr>
 
 
-              <tr onmouseout="dcai_stop()" onmouseover="dcai_start()">
+              <tr onmouseout="dcai_stop()" onmouseover="dcai_start()" class="publication-card">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='dcai_image'>
@@ -273,7 +280,7 @@
               </tr>
 
 
-              <tr onmouseout="thesis_stop()" onmouseover="thesis_start()">
+              <tr onmouseout="thesis_stop()" onmouseover="thesis_start()" class="publication-card">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='thesis_image'>
@@ -336,9 +343,9 @@
             <tbody>
 
               <tr>
-                <td align="center"
-                  style="background-color: #edd892; border-radius: 12px; width:20%; vertical-align:middle; padding:16px;">
-                  <h2 style="margin:0; color: #333;">Teaching</h2>
+                <td align="center" class="misc-label misc-label--teaching"
+                  style="width:20%; vertical-align:middle; padding:16px;">
+                  <h2>Teaching</h2>
                 </td>
 
                 <td style="padding:8px; width:80%; vertical-align:middle;">
@@ -349,9 +356,9 @@
               </tr>
 
               <tr>
-                <td align="center"
-                  style="background-color: #d4c8a8; border-radius: 12px; width:20%; vertical-align:middle; padding:16px;">
-                  <h2 style="margin:0; color: #333;">Thesis Supervisor</h2>
+                <td align="center" class="misc-label misc-label--supervisor"
+                  style="width:20%; vertical-align:middle; padding:16px;">
+                  <h2>Thesis Supervisor</h2>
                 </td>
 
                 <td style="padding:8px; width:80%; vertical-align:middle;">
@@ -378,9 +385,9 @@
               </tr>
 
               <tr>
-                <td align="center"
-                  style="background-color: #aaba9e; border-radius: 12px; width:20%; vertical-align:middle; padding:16px;">
-                  <h2 style="margin:0; color: #333;">Talks</h2>
+                <td align="center" class="misc-label misc-label--talks"
+                  style="width:20%; vertical-align:middle; padding:16px;">
+                  <h2>Talks</h2>
                 </td>
 
                 <td style="padding:8px; width:80%; vertical-align:middle;">
@@ -392,9 +399,9 @@
               </tr>
 
               <tr>
-                <td align="center"
-                  style="background-color: #b8c4d4; border-radius: 12px; width:20%; vertical-align:middle; padding:16px;">
-                  <h2 style="margin:0; color: #333;">Short Papers</h2>
+                <td align="center" class="misc-label misc-label--short-papers"
+                  style="width:20%; vertical-align:middle; padding:16px;">
+                  <h2>Short Papers</h2>
                 </td>
 
                 <td style="padding:8px; width:80%; vertical-align:middle;">
@@ -442,9 +449,30 @@
 </div>
 
 <script>
+  const themeStorageKey = 'preferred-theme';
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const themeToggleLabel = document.getElementById('theme-toggle-label');
+
   document.querySelectorAll('.author-mateo').forEach(el => el.href = authorURLs.mateoCamara);
   document.querySelectorAll('.author-joseluis').forEach(el => el.href = authorURLs.joseLuisBlanco);
   document.querySelectorAll('.author-victor').forEach(el => el.href = authorURLs.victorGutierrez);
+
+  function applyTheme(theme) {
+    const isDarkMode = theme === 'dark';
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    themeToggleButton.setAttribute('aria-pressed', String(isDarkMode));
+    themeToggleButton.setAttribute('aria-label', isDarkMode ? 'Enable light mode' : 'Enable dark mode');
+    themeToggleLabel.textContent = isDarkMode ? 'Light mode' : 'Dark mode';
+  }
+
+  const savedTheme = localStorage.getItem(themeStorageKey) || 'light';
+  applyTheme(savedTheme);
+
+  themeToggleButton.addEventListener('click', () => {
+    const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+    localStorage.setItem(themeStorageKey, nextTheme);
+    applyTheme(nextTheme);
+  });
 
   // BibTeX Modal Functions
   function showBibtexModal(bibPath) {
