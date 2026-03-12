@@ -486,7 +486,7 @@
     document.body.insertBefore(themeToggleContainer, pageShell);
   }
 
-  const savedTheme = localStorage.getItem(themeStorageKey) || 'light';
+  const savedTheme = localStorage.getItem(themeStorageKey) || 'dark';
   applyTheme(savedTheme);
   positionThemeToggle(mobileLayoutQuery);
   mobileLayoutQuery.addEventListener('change', positionThemeToggle);
