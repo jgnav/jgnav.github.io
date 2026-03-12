@@ -42,8 +42,7 @@
 <body>
   <div class="theme-toggle">
     <button id="theme-toggle" class="theme-toggle-button" type="button" aria-label="Enable dark mode" aria-pressed="false">
-      <span class="theme-toggle-icon" aria-hidden="true">◐</span>
-      <span id="theme-toggle-label" class="theme-toggle-label">Dark mode</span>
+      <span id="theme-toggle-icon" class="theme-toggle-icon" aria-hidden="true"></span>
     </button>
   </div>
   <table class="page-shell"
@@ -467,11 +466,27 @@
 </div>
 
 <script>
+  const sunIcon = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2"></circle>
+      <path d="M12 2.5v2.3"></path>
+      <path d="M12 19.2v2.3"></path>
+      <path d="M4.9 4.9l1.6 1.6"></path>
+      <path d="M17.5 17.5l1.6 1.6"></path>
+      <path d="M2.5 12h2.3"></path>
+      <path d="M19.2 12h2.3"></path>
+      <path d="M4.9 19.1l1.6-1.6"></path>
+      <path d="M17.5 6.5l1.6-1.6"></path>
+    </svg>`;
+  const moonIcon = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20.2 14.2A8.6 8.6 0 1 1 9.8 3.8 7.1 7.1 0 0 0 20.2 14.2z"></path>
+    </svg>`;
   const themeStorageKey = 'preferred-theme';
   const pageShell = document.querySelector('.page-shell');
   const mobileThemeToggleAnchor = document.getElementById('mobile-theme-toggle-anchor');
   const themeToggleButton = document.getElementById('theme-toggle');
-  const themeToggleLabel = document.getElementById('theme-toggle-label');
+  const themeToggleIcon = document.getElementById('theme-toggle-icon');
   const themeToggleContainer = document.querySelector('.theme-toggle');
   const narrowWindowQuery = window.matchMedia('(max-width: 1100px)');
 
@@ -484,7 +499,7 @@
     document.body.classList.toggle('dark-mode', isDarkMode);
     themeToggleButton.setAttribute('aria-pressed', String(isDarkMode));
     themeToggleButton.setAttribute('aria-label', isDarkMode ? 'Enable light mode' : 'Enable dark mode');
-    themeToggleLabel.textContent = isDarkMode ? 'Light mode' : 'Dark mode';
+    themeToggleIcon.innerHTML = isDarkMode ? sunIcon : moonIcon;
   }
 
   function positionThemeToggle(event) {
