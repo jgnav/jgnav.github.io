@@ -21,7 +21,7 @@ a:hover {
   --surface-color: #f2e5bc;
   --surface-muted-color: #ebdbb2;
   --border-color: #bdae93;
-  --highlight-color: rgba(181, 118, 20, 0.14);
+  --highlight-color: #efe2b3;
   --news-badge-bg: #d5c4a1;
   --news-badge-text: #504945;
   --shadow-color: rgba(60, 56, 54, 0.14);
@@ -49,7 +49,7 @@ body.dark-mode {
   --surface-color: #32302f;
   --surface-muted-color: #3c3836;
   --border-color: #665c54;
-  --highlight-color: rgba(250, 189, 47, 0.12);
+  --highlight-color: #4f4423;
   --news-badge-bg: #3c3836;
   --news-badge-text: #ebdbb2;
   --shadow-color: rgba(0, 0, 0, 0.32);
