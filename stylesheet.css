@@ -108,7 +108,16 @@ heading {
   font-family: 'Fira Mono', 'Courier New', monospace;
   font-size: 14px;
   font-weight: 700;
-  color: var(--heading-color);
+  color: inherit;
+}
+
+a .papertitle {
+  color: var(--link-color);
+}
+
+a:hover .papertitle,
+a:focus .papertitle {
+  color: var(--link-hover-color);
 }
 
 name {
