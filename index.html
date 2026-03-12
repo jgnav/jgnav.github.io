@@ -56,6 +56,13 @@
             <tbody>
               <tr style="padding:0px">
                 <td class="intro-text" style="padding:2.5%;width:63%;vertical-align:middle">
+                  <div class="mobile-intro-heading">
+                    <div class="mobile-intro-name-wrap">
+                      <name>Juan Gutiérrez</name>
+                    </div>
+                    <a href="images/juangutierrez.jpg" class="mobile-profile-link"><img alt="profile photo"
+                        src="images/juangutierrez_circle.png" class="mobile-profile-photo"></a>
+                  </div>
                   <p style="text-align:center">
                     <name>Juan Gutiérrez</name>
                   </p>
@@ -86,7 +93,7 @@
                   </p>
                 </td>
                 <td class="intro-photo" style="padding:2.5%;width:40%;max-width:40%">
-                  <a href="images/juangutierrez.jpg"><img style="width:100%;max-width:100%" alt="profile photo"
+                  <a href="images/juangutierrez.jpg" class="desktop-profile-link"><img style="width:100%;max-width:100%" alt="profile photo"
                       src="images/juangutierrez_circle.png" class="hoverZoomLink profile-photo"></a>
                 </td>
               </tr>
@@ -436,6 +443,7 @@
         </td>
       </tr>
   </table>
+<div id="mobile-theme-toggle-anchor"></div>
 <!-- BibTeX Modal -->
 <div id="bibtex-overlay" class="bibtex-overlay">
   <div class="bibtex-modal">
@@ -450,8 +458,12 @@
 
 <script>
   const themeStorageKey = 'preferred-theme';
+  const pageShell = document.querySelector('.page-shell');
+  const mobileThemeToggleAnchor = document.getElementById('mobile-theme-toggle-anchor');
   const themeToggleButton = document.getElementById('theme-toggle');
   const themeToggleLabel = document.getElementById('theme-toggle-label');
+  const themeToggleContainer = document.querySelector('.theme-toggle');
+  const mobileLayoutQuery = window.matchMedia('(max-width: 900px)');
 
   document.querySelectorAll('.author-mateo').forEach(el => el.href = authorURLs.mateoCamara);
   document.querySelectorAll('.author-joseluis').forEach(el => el.href = authorURLs.joseLuisBlanco);
@@ -465,8 +477,19 @@
     themeToggleLabel.textContent = isDarkMode ? 'Light mode' : 'Dark mode';
   }
 
+  function positionThemeToggle(event) {
+    if (event.matches) {
+      mobileThemeToggleAnchor.appendChild(themeToggleContainer);
+      return;
+    }
+
+    document.body.insertBefore(themeToggleContainer, pageShell);
+  }
+
   const savedTheme = localStorage.getItem(themeStorageKey) || 'light';
   applyTheme(savedTheme);
+  positionThemeToggle(mobileLayoutQuery);
+  mobileLayoutQuery.addEventListener('change', positionThemeToggle);
 
   themeToggleButton.addEventListener('click', () => {
     const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';

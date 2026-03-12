@@ -180,6 +180,12 @@ font {
   color: var(--heading-color);
 }
 
+.mobile-intro-heading,
+.mobile-profile-link,
+.mobile-profile-photo {
+  display: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -476,14 +482,51 @@ span.highlight {
     margin-top: 10px;
   }
 
+  .intro-table tr {
+    display: block;
+  }
+
   .intro-photo {
-    padding-top: 4px !important;
-    text-align: center;
+    display: none;
   }
 
   .profile-photo {
     width: min(260px, 72vw) !important;
     max-width: 100% !important;
+  }
+
+  .mobile-intro-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .mobile-intro-name-wrap {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .mobile-profile-link {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .mobile-profile-photo {
+    display: block;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .intro-text > p:first-of-type {
+    display: none;
+  }
+
+  .intro-text p {
+    text-align: left !important;
   }
 
   .intro-text,
@@ -505,6 +548,8 @@ span.highlight {
   }
 
   .publication-card {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 18px;
     padding: 16px;
     border: 1px solid var(--border-color);
@@ -517,11 +562,14 @@ span.highlight {
   }
 
   .publication-card > td:first-child {
+    order: 1;
     padding-top: 0 !important;
     padding-bottom: 12px !important;
+    text-align: center;
   }
 
   .publication-card > td:last-child {
+    order: 2;
     padding-bottom: 0 !important;
   }
 
@@ -533,10 +581,13 @@ span.highlight {
   }
 
   .misc-label {
+    display: block;
     margin-bottom: 10px;
   }
 
   .misc-table tr {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 18px;
     padding: 14px 16px 16px;
     border: 1px solid var(--border-color);
@@ -546,6 +597,14 @@ span.highlight {
 
   .misc-table td:last-child {
     padding-bottom: 0 !important;
+  }
+
+  .misc-table td:first-child {
+    order: 1;
+  }
+
+  .misc-table td:last-child {
+    order: 2;
   }
 
   .news-date {
@@ -564,9 +623,18 @@ span.highlight {
   .footer-table p {
     text-align: left;
   }
+
+  .theme-toggle {
+    position: static;
+    right: auto;
+    top: auto;
+    display: flex;
+    justify-content: center;
+    margin: 10px 16px 24px;
+  }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 901px) and (max-width: 1100px) {
   .theme-toggle {
     display: none;
   }
