@@ -1,5 +1,5 @@
 # jgnav.github.io
-Welcome to Juan Gutiérrez's HomePage!
+Welcome to [Juan Gutiérrez's website](https://jgnav.github.io/)!
 
 ## Credits
 
