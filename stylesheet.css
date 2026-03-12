@@ -147,6 +147,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.25s ease, color 0.25s ease;
+  line-height: 1.55;
 }
 
 strong {
@@ -177,6 +178,15 @@ h2,
 h3,
 font {
   color: var(--heading-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 .one {
@@ -399,6 +409,161 @@ span.highlight {
 
 .bibtex-link {
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  body,
+  td,
+  th,
+  tr,
+  p,
+  a,
+  strong,
+  .papertitle {
+    font-size: 15px;
+  }
+
+  name {
+    display: block;
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 0 0 12px;
+  }
+
+  .page-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 16px 28px;
+    box-sizing: border-box;
+  }
+
+  .intro-table,
+  .intro-table tbody,
+  .intro-table tr,
+  .intro-text,
+  .intro-photo,
+  .publications-table,
+  .publications-table tbody,
+  .publication-card,
+  .publication-card > td,
+  .misc-table,
+  .misc-table tbody,
+  .misc-table tr,
+  .misc-table td,
+  .section-table,
+  .section-table tbody,
+  .section-table tr,
+  .section-table td,
+  .misc-heading-table,
+  .misc-heading-table tbody,
+  .misc-heading-table tr,
+  .misc-heading-table td,
+  .footer-table,
+  .footer-table tbody,
+  .footer-table tr,
+  .footer-table td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .intro-table {
+    margin-top: 10px;
+  }
+
+  .intro-photo {
+    padding-top: 4px !important;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: min(260px, 72vw) !important;
+    max-width: 100% !important;
+  }
+
+  .intro-text,
+  .section-table td,
+  .publication-card > td,
+  .misc-table td,
+  .footer-table td {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .intro-text p,
+  .section-table p,
+  .publication-card p,
+  .misc-table p,
+  .misc-table td,
+  .footer-table p {
+    line-height: 1.65;
+  }
+
+  .publication-card {
+    margin-bottom: 18px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background-color: var(--surface-color);
+  }
+
+  .publication-highlight {
+    background-color: var(--highlight-color);
+  }
+
+  .publication-card > td:first-child {
+    padding-top: 0 !important;
+    padding-bottom: 12px !important;
+  }
+
+  .publication-card > td:last-child {
+    padding-bottom: 0 !important;
+  }
+
+  .one,
+  .two {
+    width: min(220px, 100%);
+    height: min(220px, 100vw - 64px);
+    margin: 0 auto;
+  }
+
+  .misc-label {
+    margin-bottom: 10px;
+  }
+
+  .misc-table tr {
+    margin-bottom: 18px;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: var(--surface-color);
+  }
+
+  .misc-table td:last-child {
+    padding-bottom: 0 !important;
+  }
+
+  .news-date {
+    margin-bottom: 6px;
+  }
+
+  .bibtex-modal {
+    width: calc(100% - 24px);
+    padding: 16px;
+  }
+
+  .footer-table {
+    padding-bottom: 12px;
+  }
+
+  .footer-table p {
+    text-align: left;
+  }
 }
 
 @media (max-width: 1100px) {
