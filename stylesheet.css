@@ -364,6 +364,23 @@ span.highlight {
   cursor: pointer;
 }
 
+.footer-banner {
+  margin: 8px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--border-color);
+  opacity: 0.78;
+  overflow: hidden;
+}
+
+.footer-banner-image {
+  display: block;
+  width: 100%;
+  max-height: 110px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.72) contrast(0.92);
+}
+
 @media (max-width: 900px) and (pointer: coarse) {
   body,
   td,
@@ -561,6 +578,15 @@ span.highlight {
   .bibtex-modal {
     width: calc(100% - 24px);
     padding: 16px;
+  }
+
+  .footer-banner {
+    margin-top: 6px;
+    opacity: 0.72;
+  }
+
+  .footer-banner-image {
+    max-height: 84px;
   }
 
   .footer-table {
