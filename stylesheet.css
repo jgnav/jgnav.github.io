@@ -49,7 +49,7 @@ body.dark-mode {
   --surface-color: #32302f;
   --surface-muted-color: #3c3836;
   --border-color: #665c54;
-  --highlight-color: #3d3523;
+  --highlight-color: #5b5343;
   --news-badge-bg: #3c3836;
   --news-badge-text: #ebdbb2;
   --shadow-color: rgba(0, 0, 0, 0.32);
@@ -670,7 +670,7 @@ span.highlight {
 
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 980px) {
   .footer-table br {
     display: none;
   }
