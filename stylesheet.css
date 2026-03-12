@@ -364,7 +364,7 @@ span.highlight {
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (pointer: coarse) {
   body,
   td,
   th,
