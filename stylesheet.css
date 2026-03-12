@@ -153,17 +153,47 @@ ul {
   width: 160px;
   height: 160px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .two {
   width: 160px;
   height: 160px;
   position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
   opacity: 0;
-  background-color: var(--surface-color);
+  background-color: var(--publication-image-bg, var(--surface-color));
+  z-index: 2;
+}
+
+.one > img,
+.two > img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+.one > img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.two > img {
+  position: relative;
+  z-index: 2;
 }
 
 .fade {
@@ -177,15 +207,13 @@ span.highlight {
 }
 
 .publication-card {
+  --publication-image-bg: var(--bg-color);
   background-color: transparent;
   transition: background-color 0.25s ease;
 }
 
 .publication-highlight {
-  background-color: var(--highlight-color);
-}
-
-.publication-highlight .two {
+  --publication-image-bg: var(--highlight-color);
   background-color: var(--highlight-color);
 }
 
@@ -414,7 +442,7 @@ span.highlight {
 
   .page-shell {
     width: 100% !important;
-    max-width: 100% !important;
+    background-color: var(--publication-image-bg, var(--surface-color));
     margin: 0 !important;
     padding: 0 16px 28px;
     box-sizing: border-box;
@@ -479,6 +507,10 @@ span.highlight {
   .mobile-intro-name-wrap {
     flex: 1 1 auto;
     min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .mobile-profile-link {
@@ -494,11 +526,29 @@ span.highlight {
     object-fit: cover;
   }
 
-  .intro-text > p:first-of-type {
+  .intro-name-desktop {
     display: none;
   }
 
   .intro-text p {
+    text-align: left !important;
+  }
+
+  .intro-email,
+  .intro-links {
+    text-align: center !important;
+  }
+
+  .intro-links {
+    line-height: 1.9;
+  }
+
+  .intro-email a,
+  .intro-links a {
+    display: inline-block;
+  }
+
+  .intro-bio {
     text-align: left !important;
   }
 
@@ -521,6 +571,7 @@ span.highlight {
   }
 
   .publication-card {
+    --publication-image-bg: var(--surface-color);
     display: flex;
     flex-direction: column;
     margin-bottom: 18px;
