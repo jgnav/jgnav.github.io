@@ -13,8 +13,8 @@ a:hover {
 
 :root {
   --bg-color: #fbf1c7;
-  --text-color: #3c3836;
-  --heading-color: #282828;
+  --text-color: #504945;
+  --heading-color: #3c3836;
   --muted-color: #665c54;
   --link-color: #076678;
   --link-hover-color: #af3a03;
@@ -23,12 +23,12 @@ a:hover {
   --border-color: #bdae93;
   --highlight-color: #ebdbb2;
   --news-badge-bg: #d5c4a1;
-  --news-badge-text: #3c3836;
+  --news-badge-text: #504945;
   --shadow-color: rgba(60, 56, 54, 0.14);
   --toggle-bg: rgba(242, 229, 188, 0.94);
   --toggle-border: rgba(102, 92, 84, 0.2);
-  --toggle-text: #282828;
-  --toggle-icon-bg: #3c3836;
+  --toggle-text: #3c3836;
+  --toggle-icon-bg: #504945;
   --toggle-icon-color: #fbf1c7;
   --teaching-bg: #d79921;
   --supervisor-bg: #b16286;
