@@ -678,9 +678,11 @@ span.highlight {
   .footer-meta {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    min-height: 54px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10px;
+    min-height: 0;
     width: 100%;
   }
 
@@ -689,10 +691,9 @@ span.highlight {
   }
 
   #mobile-theme-toggle-anchor {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: static;
+    align-self: center;
+    transform: none;
   }
 
   .theme-toggle {
