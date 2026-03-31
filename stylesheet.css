@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 a {
   color: var(--link-color);
@@ -12,58 +12,59 @@ a:hover {
 }
 
 :root {
+  --font-family: 'Lato', Verdana, Helvetica, sans-serif;
   --bg-color: #ffffff;
-  --text-color: #1f2328;
-  --heading-color: #1f2328;
-  --muted-color: #656d76;
+  --text-color: #111111;
+  --heading-color: #111111;
+  --muted-color: #4f4f4f;
   --link-color: #1772d0;
   --link-hover-color: #f09228;
   --surface-color: #ffffff;
-  --surface-muted-color: #f6f8fa;
-  --border-color: #d0d7de;
+  --surface-muted-color: #f7f7f7;
+  --border-color: #dddddd;
   --highlight-color: #ffffd0;
-  --news-badge-bg: #eaeef2;
-  --news-badge-text: #1f2328;
-  --shadow-color: rgba(31, 35, 40, 0.12);
+  --news-badge-bg: #f2f2f2;
+  --news-badge-text: #111111;
+  --shadow-color: rgba(0, 0, 0, 0.12);
   --toggle-bg: rgba(255, 255, 255, 0.96);
-  --toggle-border: rgba(31, 35, 40, 0.2);
-  --toggle-text: #1f2328;
-  --toggle-icon-bg: #1f2328;
+  --toggle-border: rgba(17, 17, 17, 0.2);
+  --toggle-text: #111111;
+  --toggle-icon-bg: #111111;
   --toggle-icon-color: #ffffff;
-  --teaching-bg: #388bfd;
-  --supervisor-bg: #db61a2;
-  --talks-bg: #3fb950;
-  --short-papers-bg: #a371f7;
-  --misc-label-text: #0d1117;
+  --teaching-bg: #edd892;
+  --supervisor-bg: #c6b89e;
+  --talks-bg: #aaba9e;
+  --short-papers-bg: #fcb97d;
+  --misc-label-text: #111111;
   --button-bg: #0969da;
   --button-hover-bg: #f09228;
   --button-success-bg: #1a7f37;
 }
 
 body.dark-mode {
-  --bg-color: #22272e;
-  --text-color: #adbac7;
-  --heading-color: #cdd9e5;
-  --muted-color: #768390;
-  --link-color: #539bf5;
-  --link-hover-color: #6cb6ff;
-  --surface-color: #2d333b;
-  --surface-muted-color: #373e47;
-  --border-color: #444c56;
-  --highlight-color: #4a4527;
-  --news-badge-bg: #373e47;
-  --news-badge-text: #adbac7;
+  --bg-color: #1e1e1e;
+  --text-color: #dddddd;
+  --heading-color: #f0f0f0;
+  --muted-color: #b5b5b5;
+  --link-color: #7bb7ff;
+  --link-hover-color: #f0b070;
+  --surface-color: #2a2a2a;
+  --surface-muted-color: #353535;
+  --border-color: #4a4a4a;
+  --highlight-color: #544d2a;
+  --news-badge-bg: #3b3b3b;
+  --news-badge-text: #e8e8e8;
   --shadow-color: rgba(1, 4, 9, 0.45);
-  --toggle-bg: rgba(45, 51, 59, 0.95);
+  --toggle-bg: rgba(42, 42, 42, 0.95);
   --toggle-border: rgba(240, 246, 252, 0.15);
-  --toggle-text: #cdd9e5;
-  --toggle-icon-bg: #cdd9e5;
-  --toggle-icon-color: #22272e;
-  --teaching-bg: #1f6feb;
-  --supervisor-bg: #bf3989;
-  --talks-bg: #2da44e;
-  --short-papers-bg: #8250df;
-  --misc-label-text: #cdd9e5;
+  --toggle-text: #f0f0f0;
+  --toggle-icon-bg: #f0f0f0;
+  --toggle-icon-color: #1e1e1e;
+  --teaching-bg: #8b7741;
+  --supervisor-bg: #6c5f4d;
+  --talks-bg: #60735a;
+  --short-papers-bg: #9a6844;
+  --misc-label-text: #f3efe6;
   --button-bg: #238636;
   --button-hover-bg: #2ea043;
   --button-success-bg: #2ea043;
@@ -82,7 +83,7 @@ td,
 th,
 tr,
 p {
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   font-size: 14px;
   color: var(--text-color);
 }
@@ -96,18 +97,18 @@ body {
 }
 
 strong {
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   font-size: 14px;
 }
 
 heading {
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   font-size: 22px;
   color: var(--heading-color);
 }
 
 .papertitle {
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   font-size: 14px;
   font-weight: 700;
   color: inherit;
@@ -123,16 +124,23 @@ a:focus .papertitle {
 }
 
 name {
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   font-size: 32px;
   font-weight: 700;
   color: var(--heading-color);
 }
 
-h2,
+h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 22px;
+  font-family: var(--font-family);
+  color: var(--heading-color);
+}
+
 h3,
 font {
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   color: var(--heading-color);
 }
 
@@ -279,7 +287,7 @@ span.highlight {
   color: var(--toggle-text);
   cursor: pointer;
   font: inherit;
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 
@@ -371,7 +379,7 @@ span.highlight {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 15px;
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   font-size: 12px;
   color: var(--text-color);
   white-space: pre-wrap;
@@ -389,7 +397,7 @@ span.highlight {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  font-family: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', monospace;
+  font-family: var(--font-family);
   transition: background-color 0.2s;
 }
 
