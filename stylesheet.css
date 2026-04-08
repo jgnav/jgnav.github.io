@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -12,7 +10,7 @@ a:hover {
 }
 
 :root {
-  --font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --bg-color: #ffffff;
   --text-color: #111111;
   --heading-color: #111111;
