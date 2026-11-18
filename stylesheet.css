@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* Light (default): GitHub Light palette with gruvbox highlights. Dark: gruvbox.
    Programmer touches: syntax-coloured symbols (# headings, $ prompt, - bullets),
@@ -7,7 +7,7 @@
 
 :root {
   --font-mono: 'JetBrainsMono Nerd Font Mono', 'JetBrainsMono Nerd Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --font-sans: var(--font-mono);
+  --font-sans: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
 
   --bg: #ffffff;
   --bg-subtle: #f6f8fa;
@@ -75,8 +75,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -307,12 +307,17 @@ strong {
 }
 
 .hero-email {
-  margin-top: 14px;
+  margin-top: 6px;
   text-align: center;
 }
 
+.email-bracket {
+  color: var(--text-muted);
+}
+
 .bio-desc {
-  margin: 14px 0;
+  margin: 20px 0 14px;
+  line-height: 1.5;
 }
 
 .bio-links {
@@ -323,14 +328,14 @@ strong {
 /* ───────────── Sections ───────────── */
 
 .section-header {
-  padding: 36px 16px 0;
+  padding: 44px 16px 0;
 }
 
 .section-title {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-family: var(--font-mono);
   font-size: 22px;
   font-weight: 700;
@@ -356,7 +361,7 @@ strong {
 }
 
 .section-header > p {
-  margin-bottom: 4px;
+  line-height: 1.5;
 }
 
 .highlight {
@@ -369,8 +374,8 @@ strong {
 .papers {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px 0 0;
+  gap: 8px;
+  padding: 18px 0 0;
 }
 
 .paper {
@@ -389,6 +394,7 @@ strong {
 
 .paper-info {
   padding: 14px 16px 14px 8px;
+  line-height: 1.35;
 }
 
 .papertitle,
@@ -401,7 +407,12 @@ span.entry-title {
 }
 
 .paper-authors {
-  margin-top: 2px;
+  margin-top: 5px;
+}
+
+.paper-venue,
+.paper-authors {
+  font-size: 14.5px;
 }
 
 .paper-authors a,
@@ -419,7 +430,7 @@ span.entry-title {
 }
 
 .paper-links {
-  margin-top: 4px;
+  margin-top: 6px;
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--text-muted);
@@ -427,6 +438,7 @@ span.entry-title {
 
 .paper-desc {
   margin-top: 10px;
+  line-height: 1.45;
 }
 
 .one {
@@ -471,11 +483,15 @@ span.entry-title {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .entry {
   position: relative;
-  padding: 0 0 0 22px;
+  padding: 0 0 0 20px;
+  line-height: 1.35;
 }
 
 .entry::before {
@@ -487,32 +503,61 @@ span.entry-title {
   color: var(--syn-bullet);
 }
 
-.entry + .entry {
-  margin-top: 12px;
+#short-papers .entries {
+  gap: 20px;
+}
+
+.entry-meta {
+  margin-top: 4px;
+  font-size: 14.5px;
+}
+
+.entry .paper-links {
+  margin-top: 6px;
+}
+
+.group + .group {
+  margin-top: 26px;
 }
 
 .entries-group {
-  margin: 22px 0 10px;
+  margin: 0 0 12px;
   font-family: var(--font-mono);
   font-size: 15px;
   font-weight: 700;
   color: var(--text);
 }
 
-.section-title + .entries-group {
-  margin-top: 0;
+.group-body {
+  margin-left: 6px;
+  padding-left: 16px;
+  border-left: 1px dotted var(--rule);
+}
+
+.subgroup + .subgroup {
+  margin-top: 20px;
 }
 
 .entries-subgroup {
-  margin: 12px 0 8px;
+  margin: 0 0 10px;
   font-family: var(--font-mono);
   font-size: 13.5px;
   font-weight: 700;
   color: var(--text-muted);
 }
 
-.entries-group + .entries-subgroup {
-  margin-top: 0;
+/* ───────────── Monospace elements ───────────── */
+
+.terminal,
+.hero-email,
+.bio-links,
+.site-footer {
+  font-family: var(--font-mono);
+}
+
+.hero-email,
+.bio-links {
+  font-size: 14px;
 }
 
 /* ───────────── Footer ───────────── */
