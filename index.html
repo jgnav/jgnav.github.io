@@ -1,571 +1,394 @@
-          <style>
-            .news-date {
-              background: var(--news-badge-bg);
-              color: var(--news-badge-text);
-              border-radius: 12px;
-              padding: 2px 10px;
-              margin-right: 8px;
-              font-weight: bold;
-              display: inline-block;
-            }
-            .news-section {
-              margin-bottom: 32px;
-            }
-          </style>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-  <title>Juan Gutiérrez</title>
-
-  <meta name="author" content="Juan Gutiérrez">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Gutiérrez</title>
+  <meta name="author" content="Juan Gutiérrez">
+  <meta name="description" content="Juan Gutiérrez — Ph.D. student in Computer Vision at UPM (GAPS). Self-supervised representation learning for image and video.">
 
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
 
-<script>
-  const authorURLs = {
-    mateoCamara: "https://mateocamara.com/",
-    joseLuisBlanco: "https://portalcientifico.upm.es/es/ipublic/researcher/309256",
-    victorGutierrez: "https://vgutierrez2404.github.io/"
-  };
-</script>
-
-
-
 <body>
-  <div class="theme-toggle">
-    <button id="theme-toggle" class="theme-toggle-button" type="button" aria-label="Enable dark mode" aria-pressed="false">
-      <span id="theme-toggle-icon" class="theme-toggle-icon" aria-hidden="true"></span>
-    </button>
-  </div>
-  <table class="page-shell"
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table class="intro-table"
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0px">
-                <td class="intro-text" style="padding:2.5%;width:63%;vertical-align:middle">
-                  <div class="mobile-intro-heading">
-                    <div class="mobile-intro-name-wrap">
-                      <name>Juan Gutiérrez</name>
-                    </div>
-                    <a href="images/juangutierrez.jpeg" class="mobile-profile-link"><img alt="profile photo"
-                        src="images/juangutierrez_circle.png" class="mobile-profile-photo"></a>
-                  </div>
-                  <p class="intro-name-desktop" style="text-align:center">
-                    <name>Juan Gutiérrez</name>
-                  </p>
-                  <p class="intro-email" style="text-align:center">
-                    Email: <a href="mailto:juan.gutierrez@upm.es">juan.gutierrez [at] upm [dot] es</a>
-                  <p class="intro-bio">
-                    I am a Ph.D student in Computer Vision at <a href="https://www.upm.es/">UPM</a>, supervised by <a
-                      class="author-joseluis">Dr. José Luis Blanco
-                      Murillo</a>, and, since September 2022, member of <a href="https://www.gaps.ssr.upm.es/">GAPS</a> research group.
-                  </p>
-                  <p class="intro-links" style="text-align:center">
+  <script>
+    // Saved theme (default: light).
+    (function () {
+      var theme = 'light';
+      try { theme = localStorage.getItem('preferred-theme') || 'light'; } catch (e) {}
+      if (theme === 'dark') document.body.classList.add('dark-mode');
+    })();
+  </script>
 
-                    
-                    <a href="data/Resume_JG.pdf">CV</a>
-                    &nbsp; | &nbsp;
-                    <a href="https://scholar.google.es/citations?user=wT7WzX8AAAAJ&hl=es&authuser=1">Scholar</a>
-                    <!-- &nbsp; | &nbsp;
-                    <a href="https://www.researchgate.net/profile/Juan-Gutierrez-178">ResearchGate</a>
-                    &nbsp; | &nbsp;
-                    <a href="https://orcid.org/0009-0001-6827-5153">ORCID</a> -->
-                    &nbsp; | &nbsp;
-                    <a href="https://www.linkedin.com/in/juan-gutierrez-navarro/">LinkedIn</a>
-                    &nbsp; | &nbsp;
-                    <a href="https://x.com/jgnav_">X</a>
-                    &nbsp; | &nbsp;
-                    <a href="https://github.com/jgnav">GitHub</a>
-                    
-                  </p>
-                </td>
-                <td class="intro-photo" style="padding:2.5%;width:40%;max-width:40%">
-                  <a href="images/juangutierrez.jpeg" class="desktop-profile-link"><img style="width:100%;max-width:100%" alt="profile photo"
-                      src="images/juangutierrez_circle.png" class="hoverZoomLink profile-photo"></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table class="section-table"
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:16px;width:100%;vertical-align:middle">
-                   <!--
-                   <h2>News</h2>
-                   <div class="news-section">
-                     <ul>
-                       <li><span class="news-date">02/26</span> I am reviewer at <a href="https://icml.cc/">ICML'26</a>.</li>
-                     </ul>
-                   </div>
-                   -->
-                  <h2>Research</h2>
-                  <p>
-                    I'm interested in the principles of self-supervised representation learning for image and video
-                    foundation models, aiming to construct latent spaces that robustly encode semantics and
-                    spatiotemporal dynamics. I leverage the geometry of the resulting feature manifold to analyze data
-                    structure and propagate sparse relational supervision. Some papers are <span
-                      class="highlight">highlighted</span>.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table class="publications-table" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-              <tr onmouseout="panc_stop()" onmouseover="panc_start()" class="publication-card publication-highlight">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='panc_image'>
-                      <img src='images/panc_after.png' width=100% alt="PANC visualization">
-                    </div>
-                    <img src='images/panc_before.png' width=100% alt="PANC placeholder">
-                  </div>
-                  <script type="text/javascript">
-                    function panc_start() {
-                      document.getElementById('panc_image').style.opacity = "1";
-                    }
-                    function panc_stop() {
-                      document.getElementById('panc_image').style.opacity = "0";
-                    }
-                    panc_stop()
-                  </script>
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2602.06912">
-                    <span class="papertitle">PANC: Prior-Aware Normalized Cut via Anchor-Augmented Token Graphs</span>
-                  </a>
-                  <br>
-                  <strong>Juan Gutiérrez</strong>,
-                  <a class="author-victor">Víctor Gutiérrez</a>,
-                  <a class="author-joseluis">José Luis Blanco</a>
-                  <br>
-                  <em>Preprint</em>, 2026
-                  <br>
-                  <a href="https://arxiv.org/abs/2602.06912">arXiv</a>
-                  | <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/panc.bib')">cite</a>
-                  <p></p>
-                  <p>
-                    A weakly supervised spectral segmentation method that injects a few annotated tokens into a token–affinity graph to bias normalized-cut clustering for stable, controllable object masks.
-                  </p>
-                </td>
-              </tr>
-
-                <tr onmouseout="hitl_stop()" onmouseover="hitl_start()" class="publication-card">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='hitl_image'>
-                      <img src='images/hitl_after.png' width=100% alt="HITL visualization">
-                    </div>
-                    <img src='images/hitl_before.png' width=100% alt="HITL placeholder">
-                  </div>
-                  <script type="text/javascript">
-                    function hitl_start() {
-                      document.getElementById('hitl_image').style.opacity = "1";
-                    }
-                    function hitl_stop() {
-                      document.getElementById('hitl_image').style.opacity = "0";
-                    }
-                    hitl_stop()
-                  </script>
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="data/ICML26_workshop.pdf">
-                    <span class="papertitle">Does AI Assistance Preserve or Collapse Disagreement? A Study of Pre-Annotations in Ambiguous Video Labeling.</span>
-                  </a>
-                  <br>
-                  <strong>Juan Gutiérrez</strong>,
-                  <a class="author-victor">Víctor Gutiérrez-García</a>,
-                  <a class="author-joseluis">José Luis Blanco-Murillo</a>
-                  <br>
-                  <em>ICML Workshop</em>, 2026
-                  <br>
-                  <a href="data/ICML26_workshop.pdf">PDF</a>
-                  | <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/hitl.bib')">bibtex</a>
-                  <p></p>
-                  <p>
-                    Benchmarking assisted annotation workflows using fine-tuned vision-language model for video.
-                  </p>
-                </td>
-              </tr>
-
-        
-            <tr onmouseout="speech_stop()" onmouseover="speech_start()" class="publication-card">
-                  <td style="padding:16px;width:20%;vertical-align:middle">
-                    <div class="one">
-                      <div class="two" id='speech_image'>
-                        <img src='images/euronoise_after.png' width=100% alt="Speech visualization">
-                      </div>
-                      <img src='images/euronoise_before.png' width=100% alt="Speech placeholder">
-                    </div>
-                    <script type="text/javascript">
-                      function speech_start() {
-                        document.getElementById('speech_image').style.opacity = "1";
-                      }
-                      function speech_stop() {
-                        document.getElementById('speech_image').style.opacity = "0";
-                      }
-                      speech_stop()
-                    </script>
-                  </td>
-                  <td style="padding:8px;width:80%;vertical-align:middle">
-                    <a href="https://arxiv.org/abs/2507.02530">
-                      <span class="papertitle">Open-Source System for Multilingual Translation and Cloned Speech
-                        Synthesis</span>
-                    </a>
-                    <br>
-                    <a class="author-mateo">Mateo Cámara</a>,
-                    <strong>Juan Gutiérrez</strong>,
-                    María Pilar Daza,
-                    <a class="author-joseluis">José Luis Blanco</a>
-                    <br>
-                    <em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain
-                    <br>
-                    <a href="https://arxiv.org/abs/2507.02530">arXiv</a> |
-                    <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/euronoise.bib')">bibtex</a>
-                    <p></p>
-                    <p>
-                      An open-source pipeline combining speech recognition, LLM-based translation, and voice-cloning TTS for real-time multilingual communication.
-                    </p>
-                  </td>
-                </tr>
-
-
-              <tr onmouseout="dcai_stop()" onmouseover="dcai_start()" class="publication-card">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='dcai_image'>
-                      <img src='images/dcai_after.png' width=100% alt="DCAI visualization">
-                    </div>
-                    <img src='images/dcai_before.png' width=100% alt="DCAI placeholder">
-                  </div>
-                  <script type="text/javascript">
-                    function dcai_start() {
-                      document.getElementById('dcai_image').style.opacity = "1";
-                    }
-                    function dcai_stop() {
-                      document.getElementById('dcai_image').style.opacity = "0";
-                    }
-                    dcai_stop()
-                  </script>
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1">
-                    <span class="papertitle">AI-Boosted Video Annotation: Exploring Pre-Labeling with
-                      Cross-Modalities</span>
-                  </a>
-                  <br>
-                  <strong>Juan Gutiérrez</strong>,
-                  Ángel Mora Sánchez,
-                  Silvia Rodríguez Jiménez,
-                  <a class="author-joseluis">José Luis Blanco</a>
-                  <br>
-                  <em>Distributed Computing and Artificial Intelligence (DCAI)</em>, 2024 (Springer LNCS, 2025)
-                  <br>
-                  <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1">springer</a> |
-                  <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/dcai.bib')">bibtex</a>
-                  <p></p>
-                  <p>
-                    Leveraging pre-trained cross-modal models within the Human-in-the-Loop paradigm to efficiently pre-annotate large-scale video datasets.
-                  </p>
-                </td>
-              </tr>
-
-
-              <tr onmouseout="thesis_stop()" onmouseover="thesis_start()" class="publication-card">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='thesis_image'>
-                      <img src='images/thesis_after.png' width=100%>
-                    </div>
-                    <img src='images/thesis_before.png' width=100%>
-                  </div>
-                  <script type="text/javascript">
-                    function thesis_start() {
-                      document.getElementById('thesis_image').style.opacity = "1";
-                    }
-                    function thesis_stop() {
-                      document.getElementById('thesis_image').style.opacity = "0";
-                    }
-                    thesis_stop()
-                  </script>
-                </td>
-
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://oa.upm.es/75341/">
-                    <span class="papertitle">A Study on the Development of a Video Annotation Support System Using an Image- and Text-Agnostic Model</span>
-                  </a>
-                  <br>
-                  <strong>Juan Gutiérrez</strong>
-                  <br>
-                  <em>Master's Thesis</em>, UPM, 2023
-                  <br>
-                  <a href="https://oa.upm.es/75341/">thesis</a> |
-                  <a href="javascript:void(0)" class="bibtex-link" onclick="showBibtexModal('data/masterthesis.bib')">bibtex</a>
-
-                  <p></p>
-                  <p>
-                    Developed a CLIP-based human-in-the-loop system for efficient video annotation via keyframe
-                    selection, semantic retrieval, and automatic label propagation.
-                  </p>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
-
-
-          <table class="misc-heading-table" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:6px;">
-            <tbody>
-              <tr>
-                <td>
-                  <h2>Miscellanea</h2>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table class="misc-table"
-            style="width:100%; border:0px; border-spacing:16px; border-collapse:separate; margin-right:auto; margin-left:auto;">
-            <tbody>
-
-              <tr>
-                <td align="center" class="misc-label misc-label--teaching"
-                  style="width:20%; vertical-align:middle; padding:16px;">
-                  <h2>Teaching</h2>
-                </td>
-
-                <td style="padding:8px; width:80%; vertical-align:middle;">
-                  - Design of Communications Systems and Equipment (M.S in Signal Theory and Communications, 1st course, UPM)
-                  <br>
-                  - Computing and Visualization Tools (B.S in Telecommunication Engineering, 2nd course, UPM)
-                </td>
-              </tr>
-
-              <tr>
-                <td align="center" class="misc-label misc-label--supervisor"
-                  style="width:20%; vertical-align:middle; padding:16px;">
-                  <h2>Thesis Supervisor</h2>
-                </td>
-
-                <td style="padding:8px; width:80%; vertical-align:middle;">
-                    <strong>B.S</strong>
-                  <br>
-                  - <a href="https://oa.upm.es/83613/">Development of a proof of concept for AI-supported video annotation</a> 
-                  <br>
-                  &nbsp;&nbsp;&nbsp;Fernando Castell Miñón  
-                  <br>
-                  - Development and evaluation of a video summary generation system using multimodal models
-                  <br>
-                  &nbsp;&nbsp;&nbsp;Andrés Velasco Sánchez
-                  <br>
-                    <strong>M.S</strong>
-                  <br>
-                  - Analysis of crossmodal representation and understanding of actions using CLIP
-                  <br>
-                  &nbsp;&nbsp;&nbsp;Imanol Torres Inchaurza
-                  <br>
-                  - <a href="https://oa.upm.es/87977/">Development of a mass search tool for digital assets based on cross-modal representations</a>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;Pablo Regodón Cerezo
-                </td>
-              </tr>
-
-              <tr>
-                <td align="center" class="misc-label misc-label--talks"
-                  style="width:20%; vertical-align:middle; padding:16px;">
-                  <h2>Talks</h2>
-                </td>
-
-                <td style="padding:8px; width:80%; vertical-align:middle;">
-                  - Text-Based Video Retrieval through Hierarchical Content Representation (Great Talks @ Teleco, 2025,
-                  Madrid, Spain)
-                  <br>
-                  - Using Agnostic Models on Image and Text to Support Video Annotation (AIAI 2023, León, Spain)
-                </td>
-              </tr>
-
-              <tr>
-                <td align="center" class="misc-label misc-label--short-papers"
-                  style="width:20%; vertical-align:middle; padding:16px;">
-                  <h2>Short Papers</h2>
-                </td>
-
-                <td style="padding:8px; width:80%; vertical-align:middle;">
-                   <a href="https://www.min-eng.com/comminution25/drafts/session2/asbjornsson.pdf">Data Integration and Analytics of Cone Crusher Responses</a>
-                  <br>
-                  G. Asbjörnsson, M. Evertsson, P. Plaza, S. Rodríguez-Jiménez, J. Gavilanes, J. Cortón-González, <strong>Juan Gutiérrez</strong>, J. L. Blanco, J. E. Ortiz
-                  <br>
-                  <em>14th International Comminution Symposium (Comminution '25)</em>, Cape Town, 2025
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-          <table class="footer-table" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <hr />
-            <tr>
-              <td>
-                <br>
-                <div class="footer-meta">
-                  <p class="footer-source">
-                    <font size="2">
-                      Feel free to steal this website's <a href="https://github.com/jgnav/jgnav.github.io">source code</a>.
-                    </font>
-                  </p>
-                  <p class="footer-update">
-                    <font size="2">
-                      Last update: March 2026
-                    </font>
-                  </p>
-                  <div id="mobile-theme-toggle-anchor"></div>
-                </div>
-              </td>
-            </tr>
-          </table>
-
-        </td>
-      </tr>
-  </table>
-<!-- BibTeX Modal -->
-<div id="bibtex-overlay" class="bibtex-overlay">
-  <div class="bibtex-modal">
-    <div class="bibtex-modal-header">
-      <h3>BibTeX Citation</h3>
-      <button class="bibtex-close" onclick="closeBibtexModal()">&times;</button>
+  <nav class="topbar" aria-label="Sections">
+    <div class="topbar-inner">
+      <a href="#top" class="topbar-prompt">~/juan&nbsp;<span class="prompt-sign">$</span></a>
+      <div class="topbar-links">
+        <a href="#research"><span class="nav-hash">#</span> research</a>
+        <a href="#short-papers"><span class="nav-hash">#</span> short-papers</a>
+        <a href="#service"><span class="nav-hash">#</span> service</a>
+        <a href="#talks"><span class="nav-hash">#</span> talks</a>
+        <a href="#teaching"><span class="nav-hash">#</span> teaching</a>
+      </div>
     </div>
-    <pre id="bibtex-content" class="bibtex-content"></pre>
-    <button class="bibtex-copy-btn" onclick="copyBibtex()">Copy to Clipboard</button>
+  </nav>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Enable dark mode">
+    <span id="theme-toggle-icon" class="theme-toggle-icon" aria-hidden="true"></span>
+  </button>
+
+  <main class="page" id="top">
+
+    <!-- ───────────── Bio ───────────── -->
+    <header class="bio">
+      <div class="bio-text">
+        <div class="terminal">
+          <p class="hero-cmd"><span class="prompt-sign">$</span> whoami</p>
+          <h1 class="name">Juan Gutiérrez<span class="cursor" aria-hidden="true">_</span></h1>
+        </div>
+        <p class="hero-email">Email: <a href="mailto:juan.gutierrez@upm.es">juan.gutierrez [at] upm [dot] es</a></p>
+        <p class="bio-desc">
+          I am a Ph.D student in Computer Vision at <a href="https://www.upm.es/">UPM</a>, supervised by
+          <a href="https://portalcientifico.upm.es/es/ipublic/researcher/309256">Dr. José Luis Blanco-Murillo</a>, and,
+          since September 2022, member of <a href="https://www.gaps.ssr.upm.es/">GAPS</a> research group.
+        </p>
+        <p class="bio-links">
+          <a href="data/Resume_JG.pdf">CV</a>
+          &nbsp;|&nbsp;
+          <a href="https://scholar.google.es/citations?user=wT7WzX8AAAAJ&hl=es&authuser=1">Scholar</a>
+          &nbsp;|&nbsp;
+          <a href="https://www.linkedin.com/in/juan-gutierrez-navarro/">LinkedIn</a>
+          &nbsp;|&nbsp;
+          <a href="https://x.com/jgnav_">X</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/jgnav">GitHub</a>
+        </p>
+      </div>
+      <div class="bio-photo">
+        <a href="images/juangutierrez.png"><img src="images/juangutierrez_circle.png" alt="Juan Gutiérrez"></a>
+      </div>
+    </header>
+
+    <!-- ───────────── Research ───────────── -->
+    <section class="section-header" id="research">
+      <h2 class="section-title"><a class="anchor" href="#research" aria-label="Link to this section">#</a> Research</h2>
+      <p>
+        I'm interested in the principles of self-supervised representation learning for image and video
+        foundation models, aiming to construct latent spaces that robustly encode semantics and
+        spatiotemporal dynamics. I leverage the geometry of the resulting feature manifold to analyze data
+        structure and propagate sparse relational supervision. Some papers are <span class="highlight">highlighted</span>.
+      </p>
+    </section>
+
+    <section class="papers">
+
+      <article class="paper highlighted">
+        <div class="paper-media">
+          <div class="one">
+            <img class="two" src="images/panc_after.png" alt="">
+            <img src="images/panc_before.png" alt="PANC">
+          </div>
+        </div>
+        <div class="paper-info">
+          <a href="https://arxiv.org/abs/2602.06912" class="papertitle">PANC: Prior-Aware Normalized Cut via Anchor-Augmented Token Graphs</a>
+          <div class="paper-authors">
+            <strong>Juan Gutiérrez</strong>,
+            <a href="https://vgutierrez2404.github.io/">Víctor Gutiérrez-García</a>,
+            <a href="https://portalcientifico.upm.es/es/ipublic/researcher/309256">José Luis Blanco-Murillo</a>
+          </div>
+          <div class="paper-venue"><em>Preprint</em>, 2026</div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2602.06912">arXiv</a> |
+            <a href="javascript:void(0)" onclick="showBibtexModal('data/panc.bib')">bib</a>
+          </div>
+          <p class="paper-desc">
+            A weakly supervised spectral segmentation method that injects a few annotated tokens into a token–affinity graph to bias normalized-cut clustering for stable, controllable object masks.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-media">
+          <div class="one">
+            <img class="two" src="images/hitl_after.png" alt="">
+            <img src="images/hitl_before.png" alt="Pre-annotation study">
+          </div>
+        </div>
+        <div class="paper-info">
+          <a href="data/ICML26_workshop.pdf" class="papertitle">Does AI Assistance Preserve or Collapse Disagreement? A Study of Pre-Annotations in Ambiguous Video Labeling.</a>
+          <div class="paper-authors">
+            <strong>Juan Gutiérrez</strong>,
+            <a href="https://vgutierrez2404.github.io/">Víctor Gutiérrez-García</a>,
+            <a href="https://portalcientifico.upm.es/es/ipublic/researcher/309256">José Luis Blanco-Murillo</a>
+          </div>
+          <div class="paper-venue"><em>ICML Workshop</em>, 2026</div>
+          <div class="paper-links">
+            <a href="data/ICML26_workshop.pdf">pdf</a> |
+            <a href="javascript:void(0)" onclick="showBibtexModal('data/hitl.bib')">bib</a>
+          </div>
+          <p class="paper-desc">
+            Benchmarking assisted annotation workflows using fine-tuned vision-language model for video.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-media">
+          <div class="one">
+            <img class="two" src="images/dcai_after.png" alt="">
+            <img src="images/dcai_before.png" alt="AI-boosted video annotation">
+          </div>
+        </div>
+        <div class="paper-info">
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1" class="papertitle">AI-Boosted Video Annotation: Exploring Pre-Labeling with Cross-Modalities</a>
+          <div class="paper-authors">
+            <strong>Juan Gutiérrez</strong>,
+            Ángel Mora Sánchez,
+            Silvia Rodríguez Jiménez,
+            <a href="https://portalcientifico.upm.es/es/ipublic/researcher/309256">José Luis Blanco-Murillo</a>
+          </div>
+          <div class="paper-venue"><em>Distributed Computing and Artificial Intelligence (DCAI)</em>, 2024 (Springer LNCS, 2025)</div>
+          <div class="paper-links">
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-80946-0_1">springer</a> |
+            <a href="javascript:void(0)" onclick="showBibtexModal('data/dcai.bib')">bib</a>
+          </div>
+          <p class="paper-desc">
+            Leveraging pre-trained cross-modal models within the Human-in-the-Loop paradigm to efficiently pre-annotate large-scale video datasets.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-media">
+          <div class="one">
+            <img class="two" src="images/thesis_after.png" alt="">
+            <img src="images/thesis_before.png" alt="Master's thesis">
+          </div>
+        </div>
+        <div class="paper-info">
+          <a href="https://oa.upm.es/75341/" class="papertitle">A Study on the Development of a Video Annotation Support System Using an Image- and Text-Agnostic Model</a>
+          <div class="paper-authors"><strong>Juan Gutiérrez</strong></div>
+          <div class="paper-venue"><em>Master's Thesis</em>, UPM, 2023</div>
+          <div class="paper-links">
+            <a href="https://oa.upm.es/75341/">thesis</a> |
+            <a href="javascript:void(0)" onclick="showBibtexModal('data/masterthesis.bib')">bib</a>
+          </div>
+          <p class="paper-desc">
+            Developed a CLIP-based human-in-the-loop system for efficient video annotation via keyframe
+            selection, semantic retrieval, and automatic label propagation.
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ───────────── Short papers ───────────── -->
+    <section class="section-header" id="short-papers">
+      <h2 class="section-title"><a class="anchor" href="#short-papers" aria-label="Link to this section">#</a> Short Papers</h2>
+      <ul class="entries">
+        <li class="entry">
+          <a class="entry-title" href="https://arxiv.org/abs/2507.02530">Open-Source System for Multilingual Translation and Cloned Speech Synthesis</a>
+          <div class="entry-meta">M. Cámara, <strong>Juan Gutiérrez</strong>, M. P. Daza, J. L. Blanco</div>
+          <div class="entry-meta"><em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain</div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2507.02530">arXiv</a> |
+            <a href="javascript:void(0)" onclick="showBibtexModal('data/euronoise.bib')">bib</a>
+          </div>
+        </li>
+        <li class="entry">
+          <a class="entry-title" href="https://www.min-eng.com/comminution25/drafts/session2/asbjornsson.pdf">Data Integration and Analytics of Cone Crusher Responses</a>
+          <div class="entry-meta">G. Asbjörnsson, M. Evertsson, P. Plaza, S. Rodríguez-Jiménez, J. Gavilanes, J. Cortón-González, <strong>Juan Gutiérrez</strong>, J. L. Blanco, J. E. Ortiz</div>
+          <div class="entry-meta"><em>14th International Comminution Symposium (Comminution '25)</em>, Cape Town, 2025</div>
+          <div class="paper-links">
+            <a href="https://www.min-eng.com/comminution25/drafts/session2/asbjornsson.pdf">pdf</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ───────────── Academic service ───────────── -->
+    <section class="section-header" id="service">
+      <h2 class="section-title"><a class="anchor" href="#service" aria-label="Link to this section">#</a> Academic Service</h2>
+      <ul class="entries">
+        <li class="entry"><span class="entry-title">Reviewer:</span> ICML 2026, NeurIPS 2026</li>
+      </ul>
+    </section>
+
+    <!-- ───────────── Talks ───────────── -->
+    <section class="section-header" id="talks">
+      <h2 class="section-title"><a class="anchor" href="#talks" aria-label="Link to this section">#</a> Talks</h2>
+      <ul class="entries">
+        <li class="entry">
+          <span class="entry-title">Text-Based Video Retrieval through Hierarchical Content Representation</span>
+          <div class="entry-meta">Great Talks @ Teleco, 2025, Madrid, Spain</div>
+        </li>
+        <li class="entry">
+          <span class="entry-title">Using Agnostic Models on Image and Text to Support Video Annotation</span>
+          <div class="entry-meta">AIAI 2023, León, Spain</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ───────────── Teaching ───────────── -->
+    <section class="section-header" id="teaching">
+      <h2 class="section-title"><a class="anchor" href="#teaching" aria-label="Link to this section">#</a> Teaching</h2>
+
+      <h3 class="entries-group" id="courses"><a class="anchor" href="#courses" aria-label="Link to this section">##</a> Courses</h3>
+      <ul class="entries">
+        <li class="entry">
+          <span class="entry-title">Design of Communications Systems and Equipment</span>
+          <div class="entry-meta">M.S in Signal Theory and Communications, 1st course, UPM</div>
+        </li>
+        <li class="entry">
+          <span class="entry-title">Computing and Visualization Tools</span>
+          <div class="entry-meta">B.S in Telecommunication Engineering, 2nd course, UPM</div>
+        </li>
+      </ul>
+
+      <h3 class="entries-group" id="supervision"><a class="anchor" href="#supervision" aria-label="Link to this section">##</a> Supervision</h3>
+      <h4 class="entries-subgroup" id="supervision-ms"><a class="anchor" href="#supervision-ms" aria-label="Link to this section">###</a> M.S</h4>
+      <ul class="entries">
+        <li class="entry"><span class="entry-title">Analysis of crossmodal representation and understanding of actions using CLIP</span></li>
+        <li class="entry"><a class="entry-title" href="https://oa.upm.es/87977/">Development of a mass search tool for digital assets based on cross-modal representations</a></li>
+      </ul>
+      <h4 class="entries-subgroup" id="supervision-bs"><a class="anchor" href="#supervision-bs" aria-label="Link to this section">###</a> B.S</h4>
+      <ul class="entries">
+        <li class="entry"><a class="entry-title" href="https://oa.upm.es/83613/">Development of a proof of concept for AI-supported video annotation</a></li>
+        <li class="entry"><span class="entry-title">Development and evaluation of a video summary generation system using multimodal models</span></li>
+      </ul>
+    </section>
+
+    <!-- ───────────── Footer ───────────── -->
+    <footer class="site-footer">
+      <p>Last update: November 2026</p>
+      <div class="footer-banner">
+        <img src="images/freak-banner.jpg" alt="Decorative retro computing banner" class="footer-banner-image"
+          loading="lazy" onerror="this.closest('.footer-banner').style.display='none'">
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- BibTeX Modal -->
+  <div id="bibtex-overlay" class="bibtex-overlay">
+    <div class="bibtex-modal" role="dialog" aria-modal="true" aria-labelledby="bibtex-title">
+      <div class="bibtex-modal-header">
+        <h3 id="bibtex-title">BibTeX</h3>
+        <button class="bibtex-close" type="button" aria-label="Close" onclick="closeBibtexModal()">&times;</button>
+      </div>
+      <pre id="bibtex-content" class="bibtex-content"></pre>
+      <button class="bibtex-copy-btn" type="button" onclick="copyBibtex()">Copy to Clipboard</button>
+    </div>
   </div>
-</div>
 
-<script>
-  const sunIcon = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="4.2"></circle>
-      <path d="M12 2.5v2.3"></path>
-      <path d="M12 19.2v2.3"></path>
-      <path d="M4.9 4.9l1.6 1.6"></path>
-      <path d="M17.5 17.5l1.6 1.6"></path>
-      <path d="M2.5 12h2.3"></path>
-      <path d="M19.2 12h2.3"></path>
-      <path d="M4.9 19.1l1.6-1.6"></path>
-      <path d="M17.5 6.5l1.6-1.6"></path>
-    </svg>`;
-  const moonIcon = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M20.2 14.2A8.6 8.6 0 1 1 9.8 3.8 7.1 7.1 0 0 0 20.2 14.2z"></path>
-    </svg>`;
-  const themeStorageKey = 'preferred-theme';
-  const pageShell = document.querySelector('.page-shell');
-  const mobileThemeToggleAnchor = document.getElementById('mobile-theme-toggle-anchor');
-  const themeToggleButton = document.getElementById('theme-toggle');
-  const themeToggleIcon = document.getElementById('theme-toggle-icon');
-  const themeToggleContainer = document.querySelector('.theme-toggle');
-  const narrowWindowQuery = window.matchMedia('(max-width: 980px)');
+  <script>
+    const sunIcon = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"></circle>
+        <path d="M12 2.5v2.3"></path><path d="M12 19.2v2.3"></path>
+        <path d="M4.9 4.9l1.6 1.6"></path><path d="M17.5 17.5l1.6 1.6"></path>
+        <path d="M2.5 12h2.3"></path><path d="M19.2 12h2.3"></path>
+        <path d="M4.9 19.1l1.6-1.6"></path><path d="M17.5 6.5l1.6-1.6"></path>
+      </svg>`;
+    const moonIcon = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.2 14.2A8.6 8.6 0 1 1 9.8 3.8 7.1 7.1 0 0 0 20.2 14.2z"></path>
+      </svg>`;
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const themeToggleIcon = document.getElementById('theme-toggle-icon');
 
-  document.querySelectorAll('.author-mateo').forEach(el => el.href = authorURLs.mateoCamara);
-  document.querySelectorAll('.author-joseluis').forEach(el => el.href = authorURLs.joseLuisBlanco);
-  document.querySelectorAll('.author-victor').forEach(el => el.href = authorURLs.victorGutierrez);
-
-  function applyTheme(theme) {
-    const isDarkMode = theme === 'dark';
-    document.body.classList.toggle('dark-mode', isDarkMode);
-    themeToggleButton.setAttribute('aria-pressed', String(isDarkMode));
-    themeToggleButton.setAttribute('aria-label', isDarkMode ? 'Enable light mode' : 'Enable dark mode');
-    themeToggleIcon.innerHTML = isDarkMode ? sunIcon : moonIcon;
-  }
-
-  function positionThemeToggle(event) {
-    if (event.matches) {
-      mobileThemeToggleAnchor.appendChild(themeToggleContainer);
-      return;
+    function applyTheme(theme) {
+      const isDarkMode = theme === 'dark';
+      document.body.classList.toggle('dark-mode', isDarkMode);
+      themeToggleButton.setAttribute('aria-label', isDarkMode ? 'Enable light mode' : 'Enable dark mode');
+      themeToggleIcon.innerHTML = isDarkMode ? sunIcon : moonIcon;
     }
 
-    document.body.insertBefore(themeToggleContainer, pageShell);
-  }
+    applyTheme(document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 
-  const savedTheme = localStorage.getItem(themeStorageKey) || 'light';
-  applyTheme(savedTheme);
-  positionThemeToggle(narrowWindowQuery);
-  narrowWindowQuery.addEventListener('change', positionThemeToggle);
-
-  themeToggleButton.addEventListener('click', () => {
-    const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
-    localStorage.setItem(themeStorageKey, nextTheme);
-    applyTheme(nextTheme);
-  });
-
-  // BibTeX Modal Functions
-  function showBibtexModal(bibPath) {
-    fetch(bibPath)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('bibtex-content').textContent = data.trim();
-        document.getElementById('bibtex-overlay').classList.add('active');
-      })
-      .catch(error => {
-        console.error('Error loading BibTeX:', error);
-        alert('Error loading BibTeX file');
-      });
-  }
-
-  function closeBibtexModal() {
-    document.getElementById('bibtex-overlay').classList.remove('active');
-    const copyBtn = document.querySelector('.bibtex-copy-btn');
-    copyBtn.textContent = 'Copy to Clipboard';
-    copyBtn.classList.remove('copied');
-  }
-
-  function copyBibtex() {
-    const bibtexText = document.getElementById('bibtex-content').textContent;
-    navigator.clipboard.writeText(bibtexText).then(() => {
-      const copyBtn = document.querySelector('.bibtex-copy-btn');
-      copyBtn.textContent = 'Copied!';
-      copyBtn.classList.add('copied');
-      setTimeout(() => {
-        copyBtn.textContent = 'Copy to Clipboard';
-        copyBtn.classList.remove('copied');
-      }, 2000);
-    }).catch(err => {
-      console.error('Failed to copy:', err);
-      alert('Failed to copy to clipboard');
+    themeToggleButton.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+      try { localStorage.setItem('preferred-theme', nextTheme); } catch (e) {}
+      applyTheme(nextTheme);
     });
-  }
 
-  // Close modal when clicking outside
-  document.getElementById('bibtex-overlay').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeBibtexModal();
+    // BibTeX modal
+    function showBibtexModal(bibPath) {
+      fetch(bibPath)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('bibtex-content').textContent = data.trim();
+          document.getElementById('bibtex-overlay').classList.add('active');
+        })
+        .catch(error => {
+          console.error('Error loading BibTeX:', error);
+          alert('Error loading BibTeX file');
+        });
     }
-  });
 
-  // Close modal with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeBibtexModal();
+    function closeBibtexModal() {
+      document.getElementById('bibtex-overlay').classList.remove('active');
+      const copyBtn = document.querySelector('.bibtex-copy-btn');
+      copyBtn.textContent = 'Copy to Clipboard';
+      copyBtn.classList.remove('copied');
     }
-  });
-</script>
+
+    function copyBibtex() {
+      const bibtexText = document.getElementById('bibtex-content').textContent;
+      navigator.clipboard.writeText(bibtexText).then(() => {
+        const copyBtn = document.querySelector('.bibtex-copy-btn');
+        copyBtn.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy to Clipboard';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        alert('Failed to copy to clipboard');
+      });
+    }
+
+    document.getElementById('bibtex-overlay').addEventListener('click', function (e) {
+      if (e.target === this) closeBibtexModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeBibtexModal();
+    });
+
+    // Show the top bar once the header has scrolled out of view
+    const topbar = document.querySelector('.topbar');
+    new IntersectionObserver(([entry]) => {
+      topbar.classList.toggle('visible', !entry.isIntersecting);
+    }, { rootMargin: '-60px 0px 0px 0px' }).observe(document.querySelector('.bio'));
+
+    // Highlight the current section in the top bar
+    const navLinks = document.querySelectorAll('.topbar-links a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href');
+      const target = href.startsWith('#') ? document.querySelector(href) : null;
+      if (target) observer.observe(target);
+    });
+
+    // Tap a paper on touch screens to toggle its "after" image
+    document.querySelectorAll('.paper').forEach(function (card) {
+      card.addEventListener('touchstart', function () {
+        document.querySelectorAll('.paper.hover-active').forEach(function (c) {
+          if (c !== card) c.classList.remove('hover-active');
+        });
+        card.classList.toggle('hover-active');
+      }, { passive: true });
+    });
+  </script>
 </body>
 
 </html>
