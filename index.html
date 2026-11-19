@@ -78,7 +78,6 @@
     <section class="section-header" id="news">
       <h2 class="section-title"><a class="anchor" href="#news" aria-label="Link to this section">#</a> News</h2>
       <ul class="entries news">
-        <li class="entry"><span class="news-date">[11/26]</span><span class="news-text">What lies between patches and whole images? Regions made of several concepts. Our new preprint <strong><a href="https://arxiv.org/abs/2611.24806">ReCoCo</a></strong> learns from them directly and improves dense self-supervised features.</span></li>
         <li class="entry"><span class="news-date">[10/26]</span><span class="news-text">Can a handful of annotated tokens steer a frozen ViT toward any concept, with no training at all? Yes: <strong><a href="panc/">PANC</a></strong> shows how, and it has been accepted at <a href="https://wacv.thecvf.com/"><strong>WACV'27</strong></a>!</span></li>
         <li class="entry"><span class="news-date">[09/26]</span><span class="news-text">I am excited to start a <strong>research visit</strong> at <a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing"><strong>CVSSP</strong></a>, <strong>University of Surrey</strong>, hosted by <a href="https://www.surrey.ac.uk/people/sara-atito">Dr. Sara Atito</a>, where I will work on self-supervised visual representation learning.</span></li>
         <li class="entry"><span class="news-date">[07/26]</span><span class="news-text">Honored to be recognized as a <strong>Silver Reviewer</strong> at <a href="https://icml.cc/"><strong>ICML'26</strong></a>.</span></li>
@@ -122,7 +121,28 @@
             <a href="javascript:void(0)" onclick="showBibtexModal('data/recoco.bib')">bib</a>
           </div>
           <p class="paper-desc">
-            Region-level self-supervision without correspondences or grouping: ReCoCo aligns compositions of patch-level prototype predictions over the regions two augmented views share, improving dense features with no extra parameters.
+            Region-level self-supervision over compositions of prototype predictions, for stronger dense features.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-media">
+          <div class="one">
+            <img class="two" src="images/cwflow_after.png" alt="">
+            <img src="images/cwflow_before.png" alt="PCF transport: prior to data, and data to prior on hover">
+          </div>
+        </div>
+        <div class="paper-info">
+          <span class="papertitle">Invertible Transport Between Sample-Only Distributions via Projected Characteristic Functions</span>
+          <div class="paper-authors">
+            <strong>Juan Gutiérrez</strong>,
+            <a href="https://vgutierrez2404.github.io/">Víctor Gutiérrez-García</a>,
+            <a href="https://jlblancoupm.github.io/">José Luis Blanco-Murillo</a>
+          </div>
+          <div class="paper-venue"><em>Preprint</em>, 2026</div>
+          <p class="paper-desc">
+            Invertible flows toward priors known only through samples, by matching projected characteristic functions.
           </p>
         </div>
       </article>
@@ -149,7 +169,7 @@
             <a href="javascript:void(0)" onclick="showBibtexModal('data/panc.bib')">bib</a>
           </div>
           <p class="paper-desc">
-            Training-free in-context segmentation: a few annotated context tokens are injected into a frozen ViT affinity graph through foreground/background anchors, softly steering Normalized Cut toward the target concept.
+            Training-free in-context segmentation that steers Normalized Cut with a few annotated tokens.
           </p>
         </div>
       </article>
@@ -176,7 +196,7 @@
             <a href="javascript:void(0)" onclick="showBibtexModal('data/hitl.bib')">bib</a>
           </div>
           <p class="paper-desc">
-            A counterbalanced study with 18 annotators and 180 sessions: AI pre-annotations cut video labeling time by 23% and mostly act as editable temporal scaffolds, standardizing boundaries without a large aggregate collapse of human disagreement.
+            AI pre-annotations cut video labeling time by 23% and act mainly as editable scaffolds.
           </p>
         </div>
       </article>
@@ -202,7 +222,7 @@
             <a href="javascript:void(0)" onclick="showBibtexModal('data/dcai.bib')">bib</a>
           </div>
           <p class="paper-desc">
-            Leveraging pre-trained cross-modal models within the Human-in-the-Loop paradigm to efficiently pre-annotate large-scale video datasets.
+            Pre-trained cross-modal models pre-annotate large video datasets in a human-in-the-loop workflow.
           </p>
         </div>
       </article>
@@ -223,8 +243,7 @@
             <a href="javascript:void(0)" onclick="showBibtexModal('data/masterthesis.bib')">bib</a>
           </div>
           <p class="paper-desc">
-            Developed a CLIP-based human-in-the-loop system for efficient video annotation via keyframe
-            selection, semantic retrieval, and automatic label propagation.
+            A CLIP-based human-in-the-loop system for faster video annotation.
           </p>
         </div>
       </article>
