@@ -321,7 +321,15 @@ strong {
 
 .bio-links {
   margin: 0;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.bio-links .sep {
+  margin: 0 0.6em;
+  color: var(--text-muted);
 }
 
 /* ───────────── Sections ───────────── */
@@ -761,7 +769,15 @@ span.entry-title {
   }
 
   .bio-links {
-    font-size: 12.5px;
+    font-size: 13px;
+  }
+
+  .bio-links .sep {
+    margin: 0 0.5em;
+  }
+
+  .bio-desc {
+    margin: 16px 0 12px;
   }
 
   .bio-text {
@@ -791,22 +807,89 @@ span.entry-title {
     font-size: 19px;
   }
 
+  /* Papers: small thumbnail beside title/authors/venue/links,
+     description spans the full width underneath. */
+  .papers {
+    gap: 4px;
+  }
+
   .paper {
-    grid-template-columns: 124px minmax(0, 1fr);
+    grid-template-columns: 84px minmax(0, 1fr);
+    column-gap: 12px;
     align-items: start;
+    padding: 14px 16px;
   }
 
   .paper-media {
-    padding: 12px 8px 12px 12px;
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    padding: 2px 0 0;
   }
 
   .paper-info {
-    padding: 12px 12px 12px 6px;
+    display: contents;
+  }
+
+  .paper-info > * {
+    grid-column: 2;
+  }
+
+  .paper-info > .paper-desc {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+  }
+
+  .papertitle {
+    line-height: 1.3;
+  }
+
+  .paper-venue,
+  .paper-authors {
+    font-size: 14px;
+  }
+
+  .paper-authors a,
+  .paper-authors strong {
+    white-space: normal;
   }
 
   .one {
-    width: 104px;
-    height: 104px;
+    width: 84px;
+    height: 84px;
+  }
+
+  /* Work experience: dates always on their own line under the role. */
+  .job-head {
+    display: block;
+  }
+
+  .job-dates {
+    display: block;
+    margin-top: 1px;
+    font-size: 12px;
+  }
+
+  /* News: date above the text, so the text uses the full width. */
+  .news .entry {
+    display: block;
+  }
+
+  .news-date {
+    display: block;
+    font-size: 12px;
+  }
+
+  .entry-meta {
+    font-size: 14px;
+  }
+
+  .subsection {
+    padding: 24px 16px 0 32px;
+  }
+
+  .group,
+  .subgroup {
+    padding-left: 16px;
   }
 
   .site-footer p {
