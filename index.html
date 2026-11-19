@@ -8,7 +8,7 @@
   <meta name="author" content="Juan Gutiérrez">
   <meta name="description" content="Juan Gutiérrez — Ph.D. student in Computer Vision at UPM (GAPS). Self-supervised representation learning for image and video.">
 
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css?v=20261119h">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
@@ -27,10 +27,11 @@
     <div class="topbar-inner">
       <a href="#top" class="topbar-prompt">~/juan&nbsp;<span class="prompt-sign">$</span></a>
       <div class="topbar-links">
+        <a href="#news"><span class="nav-hash">#</span> news</a>
         <a href="#research"><span class="nav-hash">#</span> research</a>
-        <a href="#short-papers"><span class="nav-hash">#</span> short-papers</a>
         <a href="#service"><span class="nav-hash">#</span> service</a>
         <a href="#talks"><span class="nav-hash">#</span> talks</a>
+        <a href="#experience"><span class="nav-hash">#</span> experience</a>
         <a href="#teaching"><span class="nav-hash">#</span> teaching</a>
       </div>
     </div>
@@ -71,6 +72,19 @@
         <a href="images/juangutierrez.png"><img src="images/juangutierrez_circle.png" alt="Juan Gutiérrez"></a>
       </div>
     </header>
+
+    <!-- ───────────── News ───────────── -->
+    <section class="section-header" id="news">
+      <h2 class="section-title"><a class="anchor" href="#news" aria-label="Link to this section">#</a> News</h2>
+      <ul class="entries news">
+        <li class="entry"><span class="news-date">[10/26]</span><span class="news-text">Can a handful of annotated tokens steer a frozen ViT toward any concept, with no training at all? Yes: <strong><a href="panc/">PANC</a></strong> shows how, and it has been accepted at <a href="https://wacv.thecvf.com/"><strong>WACV'27</strong></a>!</span></li>
+        <li class="entry"><span class="news-date">[09/26]</span><span class="news-text">I am excited to start a <strong>research visit</strong> at <a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing"><strong>CVSSP</strong></a>, <strong>University of Surrey</strong>, hosted by <a href="https://www.surrey.ac.uk/people/sara-atito">Dr. Sara Atito</a>, where I will work on self-supervised visual representation learning.</span></li>
+        <li class="entry"><span class="news-date">[07/26]</span><span class="news-text">Honored to be recognized as a <strong>Silver Reviewer</strong> at <a href="https://icml.cc/"><strong>ICML'26</strong></a>.</span></li>
+        <li class="entry"><span class="news-date">[07/26]</span><span class="news-text">Serving as a reviewer for <a href="https://wacv.thecvf.com/"><strong>WACV'27</strong></a>.</span></li>
+        <li class="entry"><span class="news-date">[05/26]</span><span class="news-text">Do AI pre-annotations make video labeling faster at the cost of human disagreement? <strong><a href="hitl/">Our study</a></strong> finds a 23% speed-up while they act mainly as editable scaffolds. Accepted at the <a href="https://pluralistic-alignment.github.io/"><strong>ICML'26 Workshop</strong></a>.</span></li>
+        <li class="entry"><span class="news-date">[05/26]</span><span class="news-text">Serving as a reviewer for <a href="https://neurips.cc/"><strong>NeurIPS'26</strong></a>.</span></li>
+      </ul>
+    </section>
 
     <!-- ───────────── Research ───────────── -->
     <section class="section-header" id="research">
@@ -126,12 +140,10 @@
             <a href="https://vgutierrez2404.github.io/">Víctor Gutiérrez-García</a>,
             <a href="https://jlblancoupm.github.io/">José Luis Blanco-Murillo</a>
           </div>
-          <div class="paper-venue"><em>ICML Workshop on Pluralistic Alignment</em>, 2026</div>
+          <div class="paper-venue"><em>ICML'26 Workshop</em></div>
           <div class="paper-links">
             <a href="hitl/">project page</a> |
             <a href="https://openreview.net/forum?id=JxiOoHqbXl">OpenReview</a> |
-            <a href="https://arxiv.org/abs/2510.21798">arXiv</a> |
-            <a href="data/ICML26_workshop.pdf">pdf</a> |
             <a href="javascript:void(0)" onclick="showBibtexModal('data/hitl.bib')">bib</a>
           </div>
           <p class="paper-desc">
@@ -178,7 +190,7 @@
           <div class="paper-authors"><strong>Juan Gutiérrez</strong></div>
           <div class="paper-venue"><em>Master's Thesis</em>, UPM, 2023</div>
           <div class="paper-links">
-            <a href="https://oa.upm.es/75341/">thesis</a> |
+            <a href="https://oa.upm.es/75341/">UPM archive</a> |
             <a href="javascript:void(0)" onclick="showBibtexModal('data/masterthesis.bib')">bib</a>
           </div>
           <p class="paper-desc">
@@ -190,26 +202,17 @@
 
     </section>
 
-    <!-- ───────────── Short papers ───────────── -->
-    <section class="section-header" id="short-papers">
-      <h2 class="section-title"><a class="anchor" href="#short-papers" aria-label="Link to this section">#</a> Short Papers</h2>
+    <!-- ───────────── Research › Short papers ───────────── -->
+    <section class="subsection" id="short-papers">
+      <h3 class="entries-group"><a class="anchor" href="#short-papers" aria-label="Link to this section">##</a> Short Papers</h3>
       <ul class="entries">
         <li class="entry">
           <a class="entry-title" href="https://arxiv.org/abs/2507.02530">Open-Source System for Multilingual Translation and Cloned Speech Synthesis</a>
-          <div class="entry-meta">M. Cámara, <strong>Juan Gutiérrez</strong>, M. P. Daza, J. L. Blanco</div>
           <div class="entry-meta"><em>Forum Acusticum / Euronoise 2025</em>, Málaga, Spain</div>
-          <div class="paper-links">
-            <a href="https://arxiv.org/abs/2507.02530">arXiv</a> |
-            <a href="javascript:void(0)" onclick="showBibtexModal('data/euronoise.bib')">bib</a>
-          </div>
         </li>
         <li class="entry">
           <a class="entry-title" href="https://www.min-eng.com/comminution25/drafts/session2/asbjornsson.pdf">Data Integration and Analytics of Cone Crusher Responses</a>
-          <div class="entry-meta">G. Asbjörnsson, M. Evertsson, P. Plaza, S. Rodríguez-Jiménez, J. Gavilanes, J. Cortón-González, <strong>Juan Gutiérrez</strong>, J. L. Blanco, J. E. Ortiz</div>
           <div class="entry-meta"><em>14th International Comminution Symposium (Comminution '25)</em>, Cape Town, 2025</div>
-          <div class="paper-links">
-            <a href="https://www.min-eng.com/comminution25/drafts/session2/asbjornsson.pdf">pdf</a>
-          </div>
         </li>
       </ul>
     </section>
@@ -218,7 +221,7 @@
     <section class="section-header" id="service">
       <h2 class="section-title"><a class="anchor" href="#service" aria-label="Link to this section">#</a> Academic Service</h2>
       <ul class="entries">
-        <li class="entry"><span class="entry-title">Reviewer:</span> ICML 2026, NeurIPS 2026</li>
+        <li class="entry"><span class="entry-title">Reviewer:</span> <a href="https://icml.cc/">ICML 2026</a>, <a href="https://neurips.cc/">NeurIPS 2026</a>, <a href="https://wacv.thecvf.com/">WACV 2027</a></li>
       </ul>
     </section>
 
@@ -237,6 +240,25 @@
       </ul>
     </section>
 
+    <!-- ───────────── Work experience ───────────── -->
+    <section class="section-header" id="experience">
+      <h2 class="section-title"><a class="anchor" href="#experience" aria-label="Link to this section">#</a> Work Experience</h2>
+      <ul class="entries">
+        <li class="entry job">
+          <div class="job-head"><span class="entry-title">Teaching Assistant</span><span class="job-dates">Aug 2025 – Present</span></div>
+          <div class="entry-meta">Department of Signals, Systems and Radiocommunications, <a href="https://www.upm.es/">UPM</a>, Madrid</div>
+        </li>
+        <li class="entry job">
+          <div class="job-head"><span class="entry-title">Computer Vision Engineer</span><span class="job-dates">Sep 2023 – Aug 2025</span></div>
+          <div class="entry-meta"><a href="https://sigmacognition.ai/">Sigma Cognition S.L.</a>, Madrid</div>
+        </li>
+        <li class="entry job">
+          <div class="job-head"><span class="entry-title">Applied Researcher</span><span class="job-dates">May 2024 – Aug 2025</span></div>
+          <div class="entry-meta"><a href="https://www.fundetel.etsit.upm.es/">FUNDETEL</a> at UPM, Madrid</div>
+        </li>
+      </ul>
+    </section>
+
     <!-- ───────────── Teaching ───────────── -->
     <section class="section-header" id="teaching">
       <h2 class="section-title"><a class="anchor" href="#teaching" aria-label="Link to this section">#</a> Teaching</h2>
@@ -247,11 +269,11 @@
           <ul class="entries">
             <li class="entry">
               <span class="entry-title">Design of Communications Systems and Equipment</span>
-              <div class="entry-meta">M.S in Signal Theory and Communications, 1st course, UPM</div>
+              <div class="entry-meta">M.S in Signal Theory and Communications, UPM · 2025–26, 2026–27</div>
             </li>
             <li class="entry">
               <span class="entry-title">Computing and Visualization Tools</span>
-              <div class="entry-meta">B.S in Telecommunication Engineering, 2nd course, UPM</div>
+              <div class="entry-meta">B.S in Telecommunication Engineering, UPM · 2025–26, 2026–27</div>
             </li>
           </ul>
         </div>

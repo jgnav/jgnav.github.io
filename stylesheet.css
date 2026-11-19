@@ -1,5 +1,5 @@
 /* Light (default): GitHub Light palette with gruvbox highlights. Dark: gruvbox.
-   Programmer touches: syntax-coloured symbols (# headings, $ prompt, - bullets),
+   Programmer touches: syntax-coloured symbols (# headings, $ prompt, › bullets),
    monospace chrome and headings, dotted rules, $ whoami + blinking _,
    clickable # section anchors, and the retro PC banner at the bottom.
    Fonts: the visitor's own system fonts (no web fonts are downloaded). */
@@ -21,7 +21,7 @@
   /* syntax colours */
   --syn-hash: #8250df;          /* # headings, * active */
   --syn-prompt: #1a7f37;        /* $ */
-  --syn-bullet: #8c959f;        /* - bullets */
+  --syn-bullet: #8c959f;        /* › bullets */
   --cursor: #1f2328;
 
   --topbar-bg: rgba(255, 255, 255, 0.92);
@@ -75,7 +75,7 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -200,14 +200,14 @@ strong {
 
 .theme-toggle {
   position: fixed;
-  top: 9px;
+  top: 6px;
   right: 16px;
   z-index: 200;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -224,8 +224,8 @@ strong {
 .theme-toggle-icon,
 .theme-toggle-icon svg {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
 }
 
 /* ───────────── Bio ───────────── */
@@ -234,7 +234,7 @@ strong {
   display: flex;
   align-items: center;
   gap: 2%;
-  padding: 32px 0 8px;
+  padding: 40px 0 0;
 }
 
 .bio-text {
@@ -306,7 +306,7 @@ strong {
 }
 
 .hero-email {
-  margin-top: 6px;
+  margin-top: 4px;
   text-align: center;
 }
 
@@ -315,8 +315,8 @@ strong {
 }
 
 .bio-desc {
-  margin: 20px 0 14px;
-  line-height: 1.5;
+  margin: 18px 0 14px;
+  line-height: 1.6;
 }
 
 .bio-links {
@@ -327,14 +327,14 @@ strong {
 /* ───────────── Sections ───────────── */
 
 .section-header {
-  padding: 44px 16px 0;
+  padding: 40px 16px 0;
 }
 
 .section-title {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-family: var(--font-mono);
   font-size: 22px;
   font-weight: 700;
@@ -360,7 +360,7 @@ strong {
 }
 
 .section-header > p {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .highlight {
@@ -373,8 +373,8 @@ strong {
 .papers {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 18px 0 0;
+  gap: 6px;
+  padding: 16px 0 0;
 }
 
 .paper {
@@ -393,7 +393,7 @@ strong {
 
 .paper-info {
   padding: 14px 16px 14px 8px;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .papertitle,
@@ -406,7 +406,7 @@ span.entry-title {
 }
 
 .paper-authors {
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .paper-venue,
@@ -419,7 +419,10 @@ span.entry-title {
   white-space: nowrap;
 }
 
-.paper-venue,
+.paper-venue {
+  color: var(--text);
+}
+
 .entry-meta {
   color: var(--text-muted);
 }
@@ -436,8 +439,8 @@ span.entry-title {
 }
 
 .paper-desc {
-  margin-top: 10px;
-  line-height: 1.45;
+  margin-top: 8px;
+  line-height: 1.5;
 }
 
 .one {
@@ -484,17 +487,17 @@ span.entry-title {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .entry {
   position: relative;
   padding: 0 0 0 20px;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 .entry::before {
-  content: '-';
+  content: '›';
   position: absolute;
   left: 4px;
   top: 0;
@@ -502,12 +505,30 @@ span.entry-title {
   color: var(--syn-bullet);
 }
 
-#short-papers .entries {
-  gap: 20px;
+.entries.news {
+  gap: 7px;
+}
+
+.news .entry {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.news-date {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--syn-prompt);
+}
+
+.news-text strong {
+  font-weight: 700;
 }
 
 .entry-meta {
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 14.5px;
 }
 
@@ -515,12 +536,35 @@ span.entry-title {
   margin-top: 6px;
 }
 
+.job-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 16px;
+}
+
+.job-dates {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.subsection {
+  padding: 28px 16px 0 36px;     /* ## level: one step (20px) in from # */
+}
+
+.group {
+  padding-left: 20px;            /* ## level inside a section */
+}
+
 .group + .group {
-  margin-top: 26px;
+  margin-top: 24px;
 }
 
 .entries-group {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   font-family: var(--font-mono);
   font-size: 15px;
   font-weight: 700;
@@ -528,17 +572,24 @@ span.entry-title {
 }
 
 .group-body {
-  margin-left: 6px;
-  padding-left: 16px;
-  border-left: 1px dotted var(--rule);
+  margin: 0;
+  padding: 0;
+}
+
+.subgroup {
+  padding-left: 20px;
+}
+
+.subgroup .entries {
+  gap: 2px;
 }
 
 .subgroup + .subgroup {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .entries-subgroup {
-  margin: 0 0 10px;
+  margin: 0 0 4px;
   font-family: var(--font-mono);
   font-size: 13.5px;
   font-weight: 700;
@@ -689,7 +740,7 @@ span.entry-title {
   }
 
   .topbar-inner {
-    padding: 0 56px 0 16px;
+    padding: 0 62px 0 16px;
     gap: 10px;
   }
 
@@ -742,6 +793,7 @@ span.entry-title {
 
   .paper {
     grid-template-columns: 124px minmax(0, 1fr);
+    align-items: start;
   }
 
   .paper-media {
