@@ -17,4 +17,4 @@ Requires `latexml` (`sudo apt install latexml`); metadata goes in a
 
 - Template: adapted from [Jon Barron's website](https://github.com/jonbarron/jonbarron.github.io), including its `tex_to_html` paper compiler.
 - Colours: GitHub-style light theme; [Gruvbox](https://github.com/morhetz/gruvbox) dark mode.
-- Fonts: [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/).
+- Fonts: the visitor's own system fonts (`system-ui` and `ui-monospace`).
