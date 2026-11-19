@@ -78,6 +78,7 @@
     <section class="section-header" id="news">
       <h2 class="section-title"><a class="anchor" href="#news" aria-label="Link to this section">#</a> News</h2>
       <ul class="entries news">
+        <li class="entry"><span class="news-date">[11/26]</span><span class="news-text">What lies between patches and whole images? Regions made of several concepts. Our new preprint <strong><a href="https://arxiv.org/abs/2611.24806">ReCoCo</a></strong> learns from them directly and improves dense self-supervised features.</span></li>
         <li class="entry"><span class="news-date">[10/26]</span><span class="news-text">Can a handful of annotated tokens steer a frozen ViT toward any concept, with no training at all? Yes: <strong><a href="panc/">PANC</a></strong> shows how, and it has been accepted at <a href="https://wacv.thecvf.com/"><strong>WACV'27</strong></a>!</span></li>
         <li class="entry"><span class="news-date">[09/26]</span><span class="news-text">I am excited to start a <strong>research visit</strong> at <a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing"><strong>CVSSP</strong></a>, <strong>University of Surrey</strong>, hosted by <a href="https://www.surrey.ac.uk/people/sara-atito">Dr. Sara Atito</a>, where I will work on self-supervised visual representation learning.</span></li>
         <li class="entry"><span class="news-date">[07/26]</span><span class="news-text">Honored to be recognized as a <strong>Silver Reviewer</strong> at <a href="https://icml.cc/"><strong>ICML'26</strong></a>.</span></li>
@@ -99,6 +100,32 @@
     </section>
 
     <section class="papers">
+
+      <article class="paper highlighted">
+        <div class="paper-media">
+          <div class="one">
+            <img class="two" src="images/recoco_after.png" alt="">
+            <img src="images/recoco_before.png" alt="ReCoCo">
+          </div>
+        </div>
+        <div class="paper-info">
+          <a href="https://arxiv.org/abs/2611.24806" class="papertitle">ReCoCo: From Patches to Compositions for Visual Representation Learning</a>
+          <div class="paper-authors">
+            <strong>Juan Gutiérrez</strong>,
+            <a href="https://stootaghaj.github.io/">Saman Zadtootaghaj</a>,
+            <a href="https://jlblancoupm.github.io/">José Luis Blanco-Murillo</a>,
+            <a href="https://www.surrey.ac.uk/people/sara-atito">Sara Atito</a>
+          </div>
+          <div class="paper-venue"><em>arXiv</em>, 2026</div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2611.24806">arXiv</a> |
+            <a href="javascript:void(0)" onclick="showBibtexModal('data/recoco.bib')">bib</a>
+          </div>
+          <p class="paper-desc">
+            Region-level self-supervision without correspondences or grouping: ReCoCo aligns compositions of patch-level prototype predictions over the regions two augmented views share, improving dense features with no extra parameters.
+          </p>
+        </div>
+      </article>
 
       <article class="paper highlighted">
         <div class="paper-media">
@@ -145,6 +172,7 @@
           <div class="paper-links">
             <a href="hitl/">project page</a> |
             <a href="https://openreview.net/forum?id=JxiOoHqbXl">OpenReview</a> |
+            <a href="data/hitl_poster.png">poster</a> |
             <a href="javascript:void(0)" onclick="showBibtexModal('data/hitl.bib')">bib</a>
           </div>
           <p class="paper-desc">
