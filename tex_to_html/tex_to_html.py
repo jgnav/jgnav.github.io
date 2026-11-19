@@ -333,6 +333,11 @@ def render_bbl_entry_html(entry: dict, render_math_fn=None) -> str:
   venue_html = format_bib_part(
       entry["venue_raw"], render_math_fn=render_math_fn
   )
+  venue_html = re.sub(
+      r"(?<![\"'=])(https?://[^\s<>\"]+?)(?=[.,;]?(?:\s|$|<))",
+      r'<a href="\1">\1</a>',
+      venue_html,
+  )
   return (
       f'<span class="bib-authors">{authors_html}</span> <span'
       f' class="bib-title">{title_html}</span> <span'
@@ -352,6 +357,12 @@ def parse_bbl(bbl_path: str) -> tuple[dict[str, dict], list[str]]:
   bbl_text = re.sub(r"\{\\natexlab\{([^{}]*)\}\}", r"\1", bbl_text)
   bbl_text = re.sub(r"\\natexlab\{([^{}]*)\}", r"\1", bbl_text)
   bbl_text = re.sub(r"\\penalty-?\d+\s*", "", bbl_text)
+  # icml/plainnat-style `.bst` files emit `URL \url{...}`, `\doi{...}` and
+  # `pp.\ 1--13` control spaces; reduce them to plain text (URLs are
+  # linkified in render_bbl_entry_html).
+  bbl_text = re.sub(r"(?:URL\s+)?\\url\s*\{([^{}]*)\}", r"\1", bbl_text)
+  bbl_text = re.sub(r"\\doi\s*\{([^{}]*)\}", r"doi:\1", bbl_text)
+  bbl_text = re.sub(r"\\ ", " ", bbl_text)
   for item in re.split(r"\\bibitem\s*(?=\[|\{)", bbl_text)[1:]:
     if item.startswith("["):
       m = re.match(r"\[([^\]]*)\]\s*\{([^}]+)\}\s*(.*)", item, re.S)
@@ -756,6 +767,7 @@ def strip_tags_plain(html_fragment: str) -> str:
   text = re.sub(
       r'<span class="katex-mathml">.*?</span>', "", html_fragment, flags=re.S
   )
+  text = re.sub(r"<br\s*/?>", " ", text)
   text = re.sub(r"<[^>]+>", "", text)
   return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
@@ -1726,6 +1738,11 @@ class LaTeXMLPaperCompiler:
           inner_html = self.render_inline_children(td).strip()
 
         span_attr = f' colspan="{span}"' if span > 1 else ""
+        # \multirow: LaTeXML sets rowspan and omits the covered cells.
+        rspan = int(td.get("rowspan") or 1)
+        if rspan > 1:
+          span_attr += f' rowspan="{rspan}"'
+          cls_list.append("multirow")
         cell_htmls.append(
             f'<{cell_tag}{span_attr} class="{" ".join(cls_list)}">'
             f"{inner_html}</{cell_tag}>"
@@ -2399,11 +2416,19 @@ class LaTeXMLPaperCompiler:
         f"{n.split()[-1]}, {' '.join(n.split()[:-1])}" if " " in n else n
         for n in author_names
     )
+    # "bibtex_booktitle" (conference/workshop papers) emits @inproceedings;
+    # otherwise @article with journal = "bibtex_journal" or the arXiv id.
+    bib_booktitle = str(self.meta.get("bibtex_booktitle", "")).strip()
+    bib_type, bib_field, bib_value = (
+        ("inproceedings", "booktitle", bib_booktitle)
+        if bib_booktitle
+        else ("article", "journal", bib_venue)
+    )
     paper_bibtex = (
-        f"@article{{{bib_key},\n"
+        f"@{bib_type}{{{bib_key},\n"
         f"  title={{{title_plain}}},\n"
         f"  author={{{bib_authors}}},\n"
-        f"  journal={{{bib_venue}}},\n"
+        f"  {bib_field}={{{bib_value}}},\n"
         f"  year={{{year}}}\n"
         "}"
     )

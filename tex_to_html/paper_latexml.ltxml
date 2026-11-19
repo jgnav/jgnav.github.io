@@ -16,6 +16,16 @@ DefMacro('\iclrfinalcopy', '');
 DefMacro('\neuripsfinal', '');
 DefMacro('\cvprfinalcopy', '');
 DefMacro('\icmltitlerunning{}', '');
+# icml20xx.sty front matter (authors/affiliations come from paper.json):
+DefMacro('\icmltitle{}', '\title{#1}');
+DefMacro('\icmlsetsymbol{}{}', '');
+DefMacro('\icmlauthor{}{}', '');
+DefMacro('\icmlaffiliation{}{}', '');
+DefMacro('\icmlcorrespondingauthor{}{}', '');
+DefMacro('\icmlkeywords{}', '');
+DefMacro('\printAffiliationsAndNotice{}', '');
+DefMacro('\icmlEqualContribution', '');
+DefEnvironment('{icmlauthorlist}', '');
 DefMacro('\lhead{}', '');
 DefMacro('\rhead{}', '');
 DefMacro('\chead{}', '');
